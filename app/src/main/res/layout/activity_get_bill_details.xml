@@ -1,0 +1,2600 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+            <include layout="@layout/loading_layout" />
+
+        </LinearLayout>
+
+
+        <!--<RelativeLayout-->
+            <!--android:id="@+id/header"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="@dimen/header_height"-->
+            <!--android:background="@color/header_color">-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:text="@string/header_text"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="22sp" />-->
+        <!--</RelativeLayout>-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/header">
+
+            <RelativeLayout
+                android:id="@+id/search_lyt"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/header_height"
+                android:visibility="visible">
+
+                <com.recsmeterreading.font.MyEditTextArial
+                    android:id="@+id/serviceNoEt"
+                    android:layout_width="@dimen/edit_text_width"
+                    android:layout_height="@dimen/edit_text_height"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:background="@null"
+                    android:hint="బిల్లును పొందడం కొరకు సర్వీసు నెం ఎంటర్ చేయండి"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:paddingLeft="10dp"
+                    android:textColor="@color/black_clr"
+                    android:textColorHint="@color/black_clr" />
+
+                <RelativeLayout
+                    android:layout_width="@dimen/edit_text_width"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/serviceNoEt"
+                    android:layout_marginLeft="@dimen/line_margin_left"
+                    android:background="@color/line_color" />
+
+                <Button
+                    android:id="@+id/search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/margin_right"
+                    android:background="@color/colorPrimary"
+                    android:text="సెర్చ్"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/btn_text_size" />
+
+            </RelativeLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/search_lyt">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <RelativeLayout
+                        android:id="@+id/billDetailsLyt"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible">
+
+                        <LinearLayout
+                            android:id="@+id/billNoDetail_lyt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_top"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/lyt_height"
+                                android:orientation="horizontal">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <com.recsmeterreading.font.MyTextViewArial
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/margin_left"
+                                        android:text="సర్వీసు నంబరు"
+                                        android:textColor="@color/black_clr"
+                                        android:textSize="20sp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="@dimen/lyt_margin_right"
+                                        android:text=":" />
+
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <com.recsmeterreading.font.MyTextViewArial
+                                        android:id="@+id/serviceNoTv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:textColor="@android:color/black" />
+                                    <!--android:text="@string/service_number_text"/>-->
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/lyt_height"
+                            android:orientation="horizontal">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1">
+
+                                <com.recsmeterreading.font.MyTextViewArial
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/margin_left"
+                                    android:text="మీటరు నంబరు"
+                                    android:textColor="@color/black_clr"
+                                    android:textSize="20sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="@dimen/lyt_margin_right"
+                                    android:text=":"
+                                    android:textColor="@color/black_clr"
+                                    android:textSize="20sp" />
+
+                            </RelativeLayout>
+
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1">
+
+                                <com.recsmeterreading.font.MyTextViewArial
+                                    android:id="@+id/meterNoTv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:textColor="@android:color/black" />
+                                <!--android:text="@string/service_number_text"-->
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+
+                            <LinearLayout
+                                android:id="@+id/ll_dail"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/lyt_height"
+                                android:orientation="horizontal"
+                                android:visibility="gone">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <com.recsmeterreading.font.MyTextViewArial
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/margin_left"
+                                        android:text="@string/dial_value" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="@dimen/lyt_margin_right"
+                                        android:text=":" />
+
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <com.recsmeterreading.font.MyTextViewArial
+                                        android:id="@+id/tv_dial_value"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:text=""
+                                        android:textColor="@android:color/black" />
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <com.recsmeterreading.font.MyTextViewArial
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/margin_left"
+                                        android:text="కస్టమర్ పేరు "
+                                        android:textColor="@color/black_clr"
+                                        android:textSize="20sp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="@dimen/lyt_margin_right"
+                                        android:text=":" />
+
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <com.recsmeterreading.font.MyTextViewArial
+                                        android:id="@+id/nameTv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:text="@string/customer_name_text"
+                                        android:textColor="@color/black_clr"
+                                        android:textSize="18sp" />
+                                </RelativeLayout>
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/lyt_height"
+                                android:orientation="horizontal">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <com.recsmeterreading.font.MyTextViewArial
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/margin_left"
+                                        android:text="ఆధార్ నంబరు"
+                                        android:textColor="@color/black_clr"
+                                        android:textSize="20sp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="@dimen/lyt_margin_right"
+                                        android:text=":" />
+
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <com.recsmeterreading.font.MyEditTextArial
+                                        android:id="@+id/aadhar_no"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:background="@null"
+                                        android:hint="Update Aadhar Number"
+                                        android:inputType="number"
+                                        android:maxLength="12"
+                                        android:singleLine="true"
+                                        android:textColorHint="@android:color/black"
+                                        android:textSize="14dp" />
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:layout_alignParentBottom="true"
+                                        android:background="#bab7b7" />
+                                </RelativeLayout>
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/lyt_height"
+                                android:orientation="horizontal">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <com.recsmeterreading.font.MyTextViewArial
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/margin_left"
+                                        android:text="ఫోన్ నంబరు"
+                                        android:textColor="@color/black_clr"
+                                        android:textSize="20sp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="@dimen/lyt_margin_right"
+                                        android:text=":" />
+
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <com.recsmeterreading.font.MyEditTextArial
+                                        android:id="@+id/phone_no"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:background="@null"
+                                        android:hint="Update Phone Number"
+                                        android:inputType="phone"
+                                        android:maxLength="10"
+                                        android:singleLine="true"
+                                        android:textColorHint="@android:color/black"
+                                        android:textSize="14dp" />
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:layout_alignParentBottom="true"
+                                        android:background="#bab7b7" />
+                                </RelativeLayout>
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/lyt_height"
+                                android:orientation="horizontal">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <com.recsmeterreading.font.MyTextViewArial
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/margin_left"
+                                        android:text="కులం"
+                                        android:textColor="@color/black_clr"
+                                        android:textSize="20sp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="@dimen/lyt_margin_right"
+                                        android:text=":" />
+
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <com.recsmeterreading.font.MyTextViewArial
+                                        android:id="@+id/caste"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:textColor="@color/black_clr"
+                                        android:textSize="18sp" />
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_below="@+id/billNoDetail_lyt"
+                            android:layout_marginTop="@dimen/margin_top"
+                            android:orientation="vertical">
+
+
+                            <LinearLayout
+                                android:id="@+id/ll_arrers"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/lyt_height"
+                                android:orientation="horizontal">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <com.recsmeterreading.font.MyTextViewArial
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/margin_left"
+                                        android:text="@string/arrers"
+                                        android:textColor="@color/black_clr"
+                                        android:textSize="20sp"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="@dimen/lyt_margin_right"
+                                        android:text=":" />
+
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <com.recsmeterreading.font.MyTextViewArial
+                                        android:id="@+id/tv_arrers"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:text=""
+                                        android:textColor="@android:color/black" />
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/lyt_height"
+                                android:layout_marginTop="@dimen/margin_top"
+                                android:orientation="horizontal">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <com.recsmeterreading.font.MyTextViewArial
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/margin_left"
+                                        android:text="కేటగిరి"
+                                        android:textColor="@color/black_clr"
+                                        android:textSize="20sp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="@dimen/lyt_margin_right"
+                                        android:text=":" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <com.recsmeterreading.font.MyTextViewArial
+                                        android:id="@+id/catgoryTv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:text="@string/category_text"
+                                        android:textColor="@android:color/black" />
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/lyt_height"
+                                android:layout_marginTop="@dimen/margin_top"
+                                android:orientation="horizontal">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <com.recsmeterreading.font.MyTextViewArial
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/margin_left"
+                                        android:text="ఫేజు"
+                                        android:textColor="@color/black_clr"
+                                        android:textSize="20sp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="@dimen/lyt_margin_right"
+                                        android:text=":" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <com.recsmeterreading.font.MyTextViewArial
+                                        android:id="@+id/phaseTv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:text="@string/category_text"
+                                        android:textColor="@android:color/black" />
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/lyt_height"
+                                android:orientation="horizontal">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <com.recsmeterreading.font.MyTextViewArial
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/margin_left"
+                                        android:text="సబ్ కేటగిరి"
+                                        android:textColor="@color/black_clr"
+                                        android:textSize="20sp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="@dimen/lyt_margin_right"
+                                        android:text=":" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <com.recsmeterreading.font.MyTextViewArial
+                                        android:id="@+id/subCategoryTv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:text="@string/sub_category_text"
+                                        android:textColor="@android:color/black" />
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <com.recsmeterreading.font.MyTextViewArial
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/margin_left"
+                                        android:text="చిరునామా"
+                                        android:textColor="@color/black_clr"
+                                        android:textSize="20sp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="@dimen/lyt_margin_right"
+                                        android:text=":" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <com.recsmeterreading.font.MyTextViewArial
+                                        android:id="@+id/addressTv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="@dimen/lyt_margin_right"
+                                        android:textColor="@android:color/black" />
+                                    <!--android:text="@string/address_text"-->
+
+                                </RelativeLayout>
+
+                            </LinearLayout>
+                            <!--
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="@dimen/lyt_height"
+                                                android:layout_marginTop="@dimen/margin_top"
+                                                android:orientation="horizontal">
+
+                                                <RelativeLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent"
+                                                    android:layout_weight="1">
+                                                    <com.recsmeterreading.font.MyTextViewArial
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:text="@string/bill_date_header_text"
+                                                        android:layout_centerVertical="true"
+                                                        android:layout_marginLeft="@dimen/margin_left"/>
+                                                    <TextView
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_centerVertical="true"
+                                                        android:layout_alignParentRight="true"
+                                                        android:layout_marginRight="@dimen/lyt_margin_right"
+                                                        android:text=":"/>
+                                                </RelativeLayout>
+                                                <RelativeLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent"
+                                                    android:layout_weight="1">
+                                                    <com.recsmeterreading.font.MyTextViewArial
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_centerVertical="true"
+                                                        android:id="@+id/billDateTv"
+                                                        android:textColor ="@android:color/black"
+                                                        android:text="@string/bill_date_text"/>
+                                                </RelativeLayout>
+
+                                            </LinearLayout>
+                            -->
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/lyt_height"
+                                android:orientation="horizontal">
+
+                                <!--<RelativeLayout-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="match_parent"-->
+                                <!--android:layout_weight="1">-->
+                                <!--<com.recsmeterreading.font.MyTextViewArial-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:text="Status"-->
+                                <!--android:layout_centerVertical="true"-->
+                                <!--android:layout_marginLeft="@dimen/margin_left"/>-->
+                                <!--<TextView-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_centerVertical="true"-->
+                                <!--android:layout_alignParentRight="true"-->
+                                <!--android:layout_marginRight="@dimen/lyt_margin_right"-->
+                                <!--android:text=":"/>-->
+                                <!--</RelativeLayout>-->
+                                <!--<RelativeLayout-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="match_parent"-->
+                                <!--android:layout_weight="1">-->
+                                <!--<com.recsmeterreading.font.MyEditTextArial-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:id="@+id/statusEt"-->
+                                <!--android:layout_centerVertical="true"-->
+                                <!--android:background="@null"-->
+                                <!--android:singleLine="true"-->
+                                <!--android:hint="Please enter status"-->
+                                <!--android:textSize="14dp"-->
+                                <!--android:inputType="number"-->
+                                <!--android:maxLength="8"-->
+                                <!--android:text="01"-->
+                                <!--android:textColorHint="@android:color/black"-->
+                                <!--/>-->
+                                <!--<RelativeLayout-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="1dp"-->
+                                <!--android:background="#bab7b7"-->
+                                <!--android:layout_alignParentBottom="true"/>-->
+                                <!--</RelativeLayout>-->
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <com.recsmeterreading.font.MyTextViewArial
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/margin_left"
+                                        android:text="స్టేటస్"
+                                        android:textColor="@color/black_clr"
+                                        android:textSize="20sp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="@dimen/lyt_margin_right"
+                                        android:text=":" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginRight="10dp"
+                                    android:layout_weight="1">
+
+                                    <Spinner
+                                        android:id="@+id/statusSpinner"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:background="@drawable/dropdown"
+                                        android:ellipsize="end"
+                                        android:inputType="number"
+                                        android:maxLength="8"
+                                        android:prompt="@string/meterValue"
+                                        android:singleLine="true"
+                                        android:textColorHint="@android:color/black"
+                                        android:textSize="14dp" />
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:layout_below="@+id/statusSpinner"
+                                        android:layout_marginTop="5dp"
+                                        android:background="#bab7b7" />
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/lastMonthConsumptionLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:orientation="horizontal">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyTextViewArial
+                                            android:id="@+id/lastMeterAndConsumption"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginLeft="@dimen/margin_left"
+                                            android:text="Last Consumption" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginRight="@dimen/lyt_margin_right"
+                                            android:text=":" />
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyTextViewArial
+                                            android:id="@+id/lastMonthConsumtionTv"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginRight="@dimen/lyt_margin_right"
+                                            android:textColor="@android:color/black" />
+                                        <!--android:text="@string/address_text"-->
+
+                                    </RelativeLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/dropDownLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:orientation="horizontal">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyTextViewArial
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginLeft="@dimen/margin_left"
+                                            android:text="Meter Type" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginRight="@dimen/lyt_margin_right"
+                                            android:text=":" />
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_weight="1">
+
+                                        <Spinner
+                                            android:id="@+id/burntMeterSpinner"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:background="@null"
+                                            android:ellipsize="end"
+                                            android:inputType="number"
+                                            android:maxLength="8"
+                                            android:prompt="@string/meterValue"
+                                            android:singleLine="true"
+                                            android:textColorHint="@android:color/black"
+                                            android:textSize="14dp" />
+
+                                        <RelativeLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_below="@+id/burntMeterSpinner"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#bab7b7" />
+                                    </RelativeLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/peakLoadLyt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:visibility="visible">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:orientation="horizontal">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyTextViewArial
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginLeft="@dimen/margin_left"
+                                            android:text="6AM To 10AM" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginRight="@dimen/lyt_margin_right"
+                                            android:text=":" />
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyEditTextArial
+                                            android:id="@+id/am610"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:background="@null"
+                                            android:ellipsize="end"
+                                            android:hint="Enter Reading"
+                                            android:inputType="number"
+                                            android:maxLength="8"
+                                            android:singleLine="true"
+                                            android:textColorHint="@android:color/black"
+                                            android:textSize="14dp" />
+
+                                        <RelativeLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_below="@+id/am610"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#bab7b7" />
+                                    </RelativeLayout>
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:orientation="horizontal">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyTextViewArial
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginLeft="@dimen/margin_left"
+                                            android:text="6PM To 10PM" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginRight="@dimen/lyt_margin_right"
+                                            android:text=":" />
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyEditTextArial
+                                            android:id="@+id/pm610"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:background="@null"
+                                            android:ellipsize="end"
+                                            android:hint="Enter Reading"
+                                            android:inputType="number"
+                                            android:maxLength="8"
+                                            android:singleLine="true"
+                                            android:textColorHint="@android:color/black"
+                                            android:textSize="14dp" />
+
+                                        <RelativeLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_below="@+id/pm610"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#bab7b7" />
+                                    </RelativeLayout>
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:orientation="horizontal">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyTextViewArial
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginLeft="@dimen/margin_left"
+                                            android:text="10PM To 6AM" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginRight="@dimen/lyt_margin_right"
+                                            android:text=":" />
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyEditTextArial
+                                            android:id="@+id/ampm610"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:background="@null"
+                                            android:ellipsize="end"
+                                            android:hint="Enter Reading"
+                                            android:inputType="number"
+                                            android:maxLength="8"
+                                            android:singleLine="true"
+                                            android:textColorHint="@android:color/black"
+                                            android:textSize="14dp" />
+
+                                        <RelativeLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_below="@+id/ampm610"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#bab7b7" />
+                                    </RelativeLayout>
+
+                                </LinearLayout>
+
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/statusLyt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:orientation="horizontal">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyTextViewArial
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginLeft="@dimen/margin_left"
+                                            android:text="New Meter Number" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginRight="@dimen/lyt_margin_right"
+                                            android:text=":" />
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyEditTextArial
+                                            android:id="@+id/new_meter_no"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:background="@null"
+                                            android:ellipsize="end"
+                                            android:hint="Update New Meter Number"
+                                            android:inputType="number"
+                                            android:maxLength="8"
+                                            android:singleLine="true"
+                                            android:textColorHint="@android:color/black"
+                                            android:textSize="14dp" />
+
+                                        <RelativeLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_below="@+id/new_meter_no"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#bab7b7" />
+                                    </RelativeLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/currentReadingLyt1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/lyt_height"
+                                    android:visibility="visible"
+                                    android:orientation="horizontal">
+
+                                    <RelativeLayout
+
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyTextViewArial
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginLeft="@dimen/margin_left"
+                                            android:text="ప్రస్తుత యూనిట్లు" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginRight="@dimen/lyt_margin_right"
+                                            android:text=":" />
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyEditTextArial
+                                            android:id="@+id/curReadTv1"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:background="@null"
+                                            android:hint="ఎంటర్  ప్రస్తుత యూనిట్లు"
+                                            android:inputType="number"
+                                            android:maxLength="8"
+                                            android:singleLine="true"
+                                            />
+
+                                        <RelativeLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_alignParentBottom="true"
+                                            android:background="#bab7b7" />
+                                    </RelativeLayout>
+
+                                </LinearLayout>
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:orientation="horizontal">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyTextViewArial
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginLeft="@dimen/margin_left"
+                                            android:text="Current Meter Start Reading" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginRight="@dimen/lyt_margin_right"
+                                            android:text=":" />
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyEditTextArial
+                                            android:id="@+id/currentStartReadTV"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:background="@null"
+                                            android:ellipsize="end"
+                                            android:hint="Enter meter start reading"
+                                            android:inputType="number"
+                                            android:maxLength="8"
+                                            android:singleLine="true"
+                                            android:textColorHint="@android:color/black"
+                                            android:textSize="14dp" />
+
+                                        <RelativeLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_below="@+id/currentStartReadTV"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#bab7b7" />
+                                    </RelativeLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:orientation="horizontal">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyTextViewArial
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginLeft="@dimen/margin_left"
+                                            android:text="Old Meter Reading" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginRight="@dimen/lyt_margin_right"
+                                            android:text=":" />
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyEditTextArial
+                                            android:id="@+id/oldMeterReadTV"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:background="@null"
+                                            android:ellipsize="end"
+                                            android:hint="Enter old meter reading"
+                                            android:inputType="number"
+                                            android:maxLength="8"
+                                            android:singleLine="true"
+                                            android:textColorHint="@android:color/black"
+                                            android:textSize="14dp" />
+
+                                        <RelativeLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_below="@+id/oldMeterReadTV"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#bab7b7" />
+                                    </RelativeLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:visibility="gone"
+                                    android:orientation="horizontal">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyTextViewArial
+
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginLeft="@dimen/margin_left"
+                                            android:text="Old Meter End Reading" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginRight="@dimen/lyt_margin_right"
+                                            android:text=":" />
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyEditTextArial
+                                            android:id="@+id/lastConsumptionEt"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:background="@null"
+                                            android:ellipsize="end"
+                                            android:inputType="number"
+                                            android:maxLength="8"
+                                            android:singleLine="true"
+                                            android:textColorHint="@android:color/black"
+                                            android:textSize="14dp" />
+
+                                        <RelativeLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_below="@+id/lastConsumptionEt"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#bab7b7" />
+                                    </RelativeLayout>
+                                </LinearLayout>
+                                <!--<LinearLayout-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="50dp"-->
+                                <!--android:orientation="horizontal">-->
+
+                                <!--<RelativeLayout-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="match_parent"-->
+                                <!--android:layout_weight="1">-->
+                                <!--<com.recsmeterreading.font.MyTextViewArial-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:text="Current Meter End  Reading"-->
+                                <!--android:layout_centerVertical="true"-->
+                                <!--android:maxLines="2"-->
+                                <!--android:layout_marginLeft="@dimen/margin_left"/>-->
+                                <!--<TextView-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_centerVertical="true"-->
+                                <!--android:layout_alignParentRight="true"-->
+                                <!--android:layout_marginRight="@dimen/lyt_margin_right"-->
+                                <!--android:text=":"/>-->
+                                <!--</RelativeLayout>-->
+                                <!--<RelativeLayout-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="match_parent"-->
+                                <!--android:layout_weight="1"-->
+                                <!--android:layout_marginRight="10dp">-->
+                                <!--<com.recsmeterreading.font.MyEditTextArial-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:id="@+id/currentEndReadTV"-->
+                                <!--android:layout_centerVertical="true"-->
+                                <!--android:background="@null"-->
+                                <!--android:singleLine="true"-->
+                                <!--android:hint="Enter meter end reading"-->
+                                <!--android:textSize="14dp"-->
+                                <!--android:inputType="number"-->
+                                <!--android:maxLength="8"-->
+                                <!--android:textColorHint="@android:color/black"-->
+                                <!--/>-->
+                                <!--<RelativeLayout-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="1dp"-->
+                                <!--android:background="#bab7b7"-->
+                                <!--android:layout_below="@+id/currentEndReadTV"-->
+                                <!--android:layout_marginTop="5dp"/>-->
+                                <!--</RelativeLayout>-->
+
+                                <!--</LinearLayout>-->
+                            </LinearLayout>
+                            <!-- Layout for status code 10, readings for 10 different meter
+                            -->
+                            <LinearLayout
+                                android:id="@+id/multipleMeterLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+                                <LinearLayout
+
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:orientation="horizontal">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="2">
+
+                                        <com.recsmeterreading.font.MyTextViewArial
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginLeft="@dimen/margin_left"
+                                            android:text="Multiple Meter Reading" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginRight="@dimen/lyt_margin_right"
+                                            android:text=":" />
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_weight="2">
+                                        <LinearLayout
+                                            android:id="@+id/lll"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:orientation="horizontal">
+
+                                            <com.recsmeterreading.font.MyEditTextArial
+                                                android:id="@+id/multipleMeterReading"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_centerVertical="true"
+                                                android:background="@null"
+                                                android:ellipsize="end"
+                                                android:hint="Enter meter reading"
+                                                android:inputType="number"
+                                                android:maxLength="8"
+                                                android:singleLine="true"
+                                                android:textColorHint="@android:color/black"
+                                                android:textSize="14dp" />
+                                            <Button
+                                                android:id="@+id/addMeterReading"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginRight="5dp"
+                                                android:text="+"/>
+
+
+                                        </LinearLayout>
+                                        <RelativeLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_below="@+id/lll"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#bab7b7" />
+                                    </RelativeLayout>
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
+                                    <TextView
+                                        android:id="@+id/textMultimeter"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:layout_gravity="center"
+                                        />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/tenMetersLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:orientation="horizontal">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyTextViewArial
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginLeft="@dimen/margin_left"
+                                            android:text="First Meter Reading" />
+
+                                        <TextView
+                                           android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginRight="@dimen/lyt_margin_right"
+                                            android:text=":" />
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyEditTextArial
+                                            android:id="@+id/firstMeterReading"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:background="@null"
+                                            android:ellipsize="end"
+                                            android:hint="Enter first meter reading"
+                                            android:inputType="number"
+                                            android:maxLength="8"
+                                            android:singleLine="true"
+                                            android:textColorHint="@android:color/black"
+                                            android:textSize="14dp" />
+
+                                        <RelativeLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_below="@+id/firstMeterReading"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#bab7b7" />
+                                    </RelativeLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:orientation="horizontal">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyTextViewArial
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginLeft="@dimen/margin_left"
+                                            android:text="Second Meter Reading" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginRight="@dimen/lyt_margin_right"
+                                            android:text=":" />
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyEditTextArial
+                                            android:id="@+id/secondMeterReading"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:background="@null"
+                                            android:ellipsize="end"
+                                            android:hint="Enter second meter reading"
+                                            android:inputType="number"
+                                            android:maxLength="8"
+                                            android:singleLine="true"
+                                            android:textColorHint="@android:color/black"
+                                            android:textSize="14dp" />
+
+                                        <RelativeLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_below="@+id/secondMeterReading"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#bab7b7" />
+                                    </RelativeLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:orientation="horizontal">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyTextViewArial
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginLeft="@dimen/margin_left"
+                                            android:text="Third Meter Reading" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginRight="@dimen/lyt_margin_right"
+                                            android:text=":" />
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyEditTextArial
+                                            android:id="@+id/thirdMeterReading"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:background="@null"
+                                            android:ellipsize="end"
+                                            android:hint="Enter third meter reading"
+                                            android:inputType="number"
+                                            android:maxLength="8"
+                                            android:singleLine="true"
+                                            android:textColorHint="@android:color/black"
+                                            android:textSize="14dp" />
+
+                                        <RelativeLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_below="@+id/thirdMeterReading"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#bab7b7" />
+                                    </RelativeLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:orientation="horizontal">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyTextViewArial
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginLeft="@dimen/margin_left"
+                                            android:text="Fourth Meter Reading" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginRight="@dimen/lyt_margin_right"
+                                            android:text=":" />
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyEditTextArial
+                                            android:id="@+id/fourthMeterReading"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:background="@null"
+                                            android:ellipsize="end"
+                                            android:hint="Enter fourth meter reading"
+                                            android:inputType="number"
+                                            android:maxLength="8"
+                                            android:singleLine="true"
+                                            android:textColorHint="@android:color/black"
+                                            android:textSize="14dp" />
+
+                                        <RelativeLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_below="@+id/fourthMeterReading"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#bab7b7" />
+                                    </RelativeLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:orientation="horizontal">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyTextViewArial
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginLeft="@dimen/margin_left"
+                                            android:text="Fifth Meter Reading" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginRight="@dimen/lyt_margin_right"
+                                            android:text=":" />
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyEditTextArial
+                                            android:id="@+id/fifthMeterReading"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:background="@null"
+                                            android:ellipsize="end"
+                                            android:hint="Enter fifth meter reading"
+                                            android:inputType="number"
+                                            android:maxLength="8"
+                                            android:singleLine="true"
+                                            android:textColorHint="@android:color/black"
+                                            android:textSize="14dp" />
+
+                                        <RelativeLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_below="@+id/fifthMeterReading"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#bab7b7" />
+                                    </RelativeLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:orientation="horizontal">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyTextViewArial
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginLeft="@dimen/margin_left"
+                                            android:text="Sixth Meter Reading" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginRight="@dimen/lyt_margin_right"
+                                            android:text=":" />
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyEditTextArial
+                                            android:id="@+id/sixthMeterReading"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:background="@null"
+                                            android:ellipsize="end"
+                                            android:hint="Enter sixth meter reading"
+                                            android:inputType="number"
+                                            android:maxLength="8"
+                                            android:singleLine="true"
+                                            android:textColorHint="@android:color/black"
+                                            android:textSize="14dp" />
+
+                                        <RelativeLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_below="@+id/sixthMeterReading"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#bab7b7" />
+                                    </RelativeLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:orientation="horizontal">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyTextViewArial
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginLeft="@dimen/margin_left"
+                                            android:text="Seventh Meter Reading" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginRight="@dimen/lyt_margin_right"
+                                            android:text=":" />
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyEditTextArial
+                                            android:id="@+id/seventhMeterReading"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:background="@null"
+                                            android:ellipsize="end"
+                                            android:hint="Enter seventh meter reading"
+                                            android:inputType="number"
+                                            android:maxLength="8"
+                                            android:singleLine="true"
+                                            android:textColorHint="@android:color/black"
+                                            android:textSize="14dp" />
+
+                                        <RelativeLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_below="@+id/seventhMeterReading"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#bab7b7" />
+                                    </RelativeLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:orientation="horizontal">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyTextViewArial
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginLeft="@dimen/margin_left"
+                                            android:text="Eighth Meter Reading" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginRight="@dimen/lyt_margin_right"
+                                            android:text=":" />
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyEditTextArial
+                                            android:id="@+id/eighthMeterReading"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:background="@null"
+                                            android:ellipsize="end"
+                                            android:hint="Enter eighth meter reading"
+                                            android:inputType="number"
+                                            android:maxLength="8"
+                                            android:singleLine="true"
+                                            android:textColorHint="@android:color/black"
+                                            android:textSize="14dp" />
+
+                                        <RelativeLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_below="@+id/eighthMeterReading"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#bab7b7" />
+                                    </RelativeLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:orientation="horizontal">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyTextViewArial
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginLeft="@dimen/margin_left"
+                                            android:text="Ninth Meter Reading" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginRight="@dimen/lyt_margin_right"
+                                            android:text=":" />
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyEditTextArial
+                                            android:id="@+id/ninthMeterReading"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:background="@null"
+                                            android:ellipsize="end"
+                                            android:hint="Enter ninth meter reading"
+                                            android:inputType="number"
+                                            android:maxLength="8"
+                                            android:singleLine="true"
+                                            android:textColorHint="@android:color/black"
+                                            android:textSize="14dp" />
+
+                                        <RelativeLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_below="@+id/ninthMeterReading"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#bab7b7" />
+                                    </RelativeLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:orientation="horizontal">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyTextViewArial
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginLeft="@dimen/margin_left"
+                                            android:text="Tenth Meter Reading" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginRight="@dimen/lyt_margin_right"
+                                            android:text=":" />
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyEditTextArial
+                                            android:id="@+id/tenthMeterReading"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:background="@null"
+                                            android:ellipsize="end"
+                                            android:hint="Enter tenth meter reading"
+                                            android:inputType="number"
+                                            android:maxLength="8"
+                                            android:singleLine="true"
+                                            android:textColorHint="@android:color/black"
+                                            android:textSize="14dp" />
+
+                                        <RelativeLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_below="@+id/tenthMeterReading"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#bab7b7" />
+                                    </RelativeLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/twoMetersLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:orientation="horizontal">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyTextViewArial
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginLeft="@dimen/margin_left"
+                                            android:text="First Meter Reading" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginRight="@dimen/lyt_margin_right"
+                                            android:text=":" />
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyEditTextArial
+                                            android:id="@+id/firstTwotMeterReading"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:background="@null"
+                                            android:ellipsize="end"
+                                            android:hint="Enter first meter reading"
+                                            android:inputType="number"
+                                            android:maxLength="8"
+                                            android:singleLine="true"
+                                            android:textColorHint="@android:color/black"
+                                            android:textSize="14dp" />
+
+                                        <RelativeLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_below="@+id/firstTwotMeterReading"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#bab7b7" />
+                                    </RelativeLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:orientation="horizontal">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyTextViewArial
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginLeft="@dimen/margin_left"
+                                            android:text="Second Meter Reading" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginRight="@dimen/lyt_margin_right"
+                                            android:text=":" />
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_weight="1">
+
+                                        <com.recsmeterreading.font.MyEditTextArial
+                                            android:id="@+id/secondTwotMeterReading"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:background="@null"
+                                            android:ellipsize="end"
+                                            android:hint="Enter second meter reading"
+                                            android:inputType="number"
+                                            android:maxLength="8"
+                                            android:singleLine="true"
+                                            android:textColorHint="@android:color/black"
+                                            android:textSize="14dp" />
+
+                                        <RelativeLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_below="@+id/secondTwotMeterReading"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#bab7b7" />
+                                    </RelativeLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/currentReadingLyt"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/lyt_height"
+                                android:visibility="visible"
+                                android:orientation="horizontal">
+
+                                <RelativeLayout
+
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <com.recsmeterreading.font.MyTextViewArial
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/margin_left"
+                                        android:text="ప్రస్తుత రీడింగు"
+                                        android:textColor="@color/black_clr"
+                                        android:textSize="20sp"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="@dimen/lyt_margin_right"
+                                        android:text=":" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <com.recsmeterreading.font.MyEditTextArial
+                                        android:id="@+id/curReadTv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:background="@null"
+                                        android:hint="ఎంటర్ ప్రస్తుత రీడింగు"
+                                        android:inputType="number"
+                                        android:maxLength="8"
+                                        android:singleLine="true"
+                                        android:textColorHint="@android:color/black"
+                                        android:textSize="14dp" />
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:layout_alignParentBottom="true"
+                                        android:background="#bab7b7" />
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/lyt_height"
+                                android:orientation="horizontal">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <com.recsmeterreading.font.MyTextViewArial
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/margin_left"
+                                        android:text="సెక్యురిటి డిపాజిట్"
+                                        android:textColor="@color/black_clr"
+                                        android:textSize="20sp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="@dimen/lyt_margin_right"
+                                        android:text=":" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <com.recsmeterreading.font.MyTextViewArial
+                                        android:id="@+id/security_deposit"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:textColor="@android:color/black" />
+                                </RelativeLayout>
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/lyt_height"
+                                android:orientation="horizontal">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <com.recsmeterreading.font.MyTextViewArial
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/margin_left"
+                                        android:text="షెర్ కాపిటల్"
+                                        android:textColor="@color/black_clr"
+                                        android:textSize="20sp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="@dimen/lyt_margin_right"
+                                        android:text=":" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <com.recsmeterreading.font.MyTextViewArial
+                                        android:id="@+id/share_capital"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:textColor="@android:color/black" />
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+
+
+
+                            <!--  <LinearLayout
+                                  android:layout_width="match_parent"
+                                  android:layout_height="@dimen/lyt_height"
+                                  android:orientation="horizontal">
+
+                                  <RelativeLayout
+                                      android:layout_width="match_parent"
+                                      android:layout_height="match_parent"
+                                      android:layout_weight="1">
+                                      <com.recsmeterreading.font.MyTextViewArial
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:text="@string/pre_start_read_header_text"
+                                          android:layout_centerVertical="true"
+                                          android:layout_marginLeft="@dimen/margin_left"/>
+                                      <TextView
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:layout_centerVertical="true"
+                                          android:layout_alignParentRight="true"
+                                          android:layout_marginRight="@dimen/lyt_margin_right"
+                                          android:text=":"/>
+                                  </RelativeLayout>
+                                  <RelativeLayout
+                                      android:layout_width="match_parent"
+                                      android:layout_height="match_parent"
+                                      android:layout_weight="1">
+                                      <com.recsmeterreading.font.MyTextViewArial
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:id="@+id/previousStartReadTv"
+                                          android:layout_centerVertical="true"
+                                          android:textColor ="@android:color/black"
+                                          android:text="@string/pre_start_read_text"/>
+                                  </RelativeLayout>
+
+                              </LinearLayout>
+                              <LinearLayout
+                                  android:layout_width="match_parent"
+                                  android:layout_height="@dimen/lyt_height"
+                                  android:orientation="horizontal">
+
+                                  <RelativeLayout
+                                      android:layout_width="match_parent"
+                                      android:layout_height="match_parent"
+                                      android:layout_weight="1">
+                                      <com.recsmeterreading.font.MyTextViewArial
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:text="@string/pre_end_read_header_text"
+                                          android:layout_centerVertical="true"
+                                          android:layout_marginLeft="@dimen/margin_left"/>
+                                      <TextView
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:layout_centerVertical="true"
+                                          android:layout_alignParentRight="true"
+                                          android:layout_marginRight="@dimen/lyt_margin_right"
+                                          android:text=":"/>
+                                  </RelativeLayout>
+                                  <RelativeLayout
+                                      android:layout_width="match_parent"
+                                      android:layout_height="match_parent"
+                                      android:layout_weight="1">
+                                      <com.recsmeterreading.font.MyTextViewArial
+                                          android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                          android:id="@+id/previousEndReadTv"
+                                          android:layout_centerVertical="true"
+                                          android:textColor ="@android:color/black"
+                                          android:text="@string/pre_end_read_text"/>
+                                  </RelativeLayout>
+
+                              </LinearLayout>-->
+
+                            <!--
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="@dimen/lyt_height"
+                                                android:orientation="horizontal">
+
+                                                <RelativeLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent"
+                                                    android:layout_weight="1">
+                                                    <com.recsmeterreading.font.MyTextViewArial
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginLeft="@dimen/margin_left"
+                                                        android:layout_centerVertical="true"
+                                                        android:text="@string/units_header_text"/>
+                                                    <TextView
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_centerVertical="true"
+                                                        android:layout_alignParentRight="true"
+                                                        android:layout_marginRight="@dimen/lyt_margin_right"
+                                                        android:text=":"/>
+                                                </RelativeLayout>
+                                                <RelativeLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent"
+                                                    android:layout_weight="1">
+                                                    <com.recsmeterreading.font.MyTextViewArial
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_centerVertical="true"
+                                                        android:id="@+id/unitsTv"
+                                                        android:textColor ="@android:color/black"
+                                                        android:text="@string/units_text"/>
+                                                </RelativeLayout>
+
+                                            </LinearLayout>
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="@dimen/lyt_height"
+                                                android:orientation="horizontal">
+
+                                                <RelativeLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent"
+                                                    android:layout_weight="1">
+                                                    <com.recsmeterreading.font.MyTextViewArial
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:text="@string/amount_header_text"
+                                                        android:layout_centerVertical="true"
+                                                        android:layout_marginLeft="@dimen/margin_left"/>
+                                                    <TextView
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_centerVertical="true"
+                                                        android:layout_alignParentRight="true"
+                                                        android:layout_marginRight="@dimen/lyt_margin_right"
+                                                        android:text=":"/>
+                                                </RelativeLayout>
+                                                <RelativeLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent"
+                                                    android:layout_weight="1">
+                                                    <com.recsmeterreading.font.MyTextViewArial
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_centerVertical="true"
+                                                        android:id="@+id/amountTv"
+                                                        android:textColor ="@android:color/black"
+                                                        android:text="@string/amount_text"/>
+                                                    <TextView
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_centerVertical="true"
+                                                        android:layout_toRightOf="@+id/amountTv"
+                                                        android:textColor ="@android:color/black"
+                                                        android:text="   \u20B9"/>
+                                                </RelativeLayout>
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="@dimen/lyt_height"
+                                                android:orientation="horizontal">
+
+                                                <RelativeLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent"
+                                                    android:layout_weight="1">
+                                                    <com.recsmeterreading.font.MyTextViewArial
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:text="@string/status_header_text"
+                                                        android:layout_centerVertical="true"
+                                                        android:layout_marginLeft="@dimen/margin_left"/>
+                                                    <TextView
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_centerVertical="true"
+                                                        android:layout_alignParentRight="true"
+                                                        android:layout_marginRight="@dimen/lyt_margin_right"
+                                                        android:text=":"/>
+                                                </RelativeLayout>
+                                                <RelativeLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent"
+                                                    android:layout_weight="1">
+                                                    <com.recsmeterreading.font.MyTextViewArial
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_centerVertical="true"
+                                                        android:id="@+id/statusTv"
+                                                        android:textColor="@android:color/holo_red_dark"
+                                                        android:text="@string/status_text"/>
+                                                </RelativeLayout>
+                                            </LinearLayout>
+                            -->
+                            <Button
+                                android:id="@+id/proceedBtn"
+                                android:layout_width="@dimen/btn_width"
+                                android:layout_height="@dimen/btn_height"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginBottom="10dp"
+                                android:layout_marginTop="@dimen/margin_left"
+                                android:background="@color/colorPrimary"
+                                android:padding="@dimen/padding"
+                                android:text="ప్రొసీడ్"
+                                android:textAllCaps="false"
+                                android:textColor="@color/white" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </RelativeLayout>
+            </ScrollView>
+        </RelativeLayout>
+
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Error</string>
+    <string name="we_apologise_for_the_inconvenience">We apologise for the inconvenience</string>
+    <string name="we_re_working_on_the_problem_and_expected_to_resolve_it_shortly_please_try_again_later">We\'re working on the problem and expected to resolve it shortly. Please try again later</string>
+    <string name="an_error_occured_when_we_tried_to_process_your_request">An error occurred when we tried to process your request</string>
+    <string name="we_re_sorry">We\'re Sorry</string>
+</resources>

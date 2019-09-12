@@ -1,0 +1,184 @@
+<resources>
+    <string name="meter_Reading">Enter present </string>
+
+    <!--<string name="app_name">ARECS Meter Reading</string>-->
+    <string name="app_name">ఎ ఆర్ ఇ సి ఎస్  కశింకోట</string>
+
+    <string name="RECS"> RECS Meter Reading </string>
+    <string name="header_text"> Recs Get Bill Details </string>
+    <string name="report_header_text"> Recs Reports </string>
+    <string name="bill_infoheader_text"> Recs Bill Info Details </string>
+    <string name="service_no"> Service Number </string>
+    <string name="consumer_name"> Consumer Name </string>
+    <string name="present_meter"> Enter Present Meter Reading </string>
+    <string name="Last_month_Reading"> Enter Last Month Raeding </string>
+    <string name="category"> Category </string>
+    <string name="amount"> Amount </string>
+    <string name="submit"> SUBMIT </string>
+    <string name="arriers"> Last month arrears </string>
+    <string name="dummy_data"> Dummy Data </string>
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="hint_text">Please enter service number</string>
+    <string name="btn_text_search">Search</string>
+    <string name="btn_text_proceed">Proceed</string>
+    <string name="service_number_header_text">Service Number</string>
+    <string name="customer_name_header_text">Customer Name</string>
+    <string name="last_month_consumption">last month consumption</string>
+    <string name="arrers">బకాయిలు</string>
+    <string name="dial_value">dial value</string>
+    <string name="address_header_text">Address </string>
+    <string name="bill_date_header_text">Bill Date</string>
+    <string name="category_header_text">Category </string>
+    <string name="sub_category_header_text">Sub Category</string>
+    <string name="pre_start_read_header_text">Previous Start Reading</string>
+    <string name="pre_end_read_header_text">Previous End Reading</string>
+    <string name="current_reading_header_text">Current Reading</string>
+    <string name="current_read_hint">Enter current reading</string>
+    <string name="units_header_text">Units</string>
+    <string name="engchg_header_text">Energy Charges</string>
+    <string name="nkt_header_text">NKT</string>
+    <string name="amount_header_text">Total Bill Amount</string>
+    <string name="status_header_text">Status</string>
+
+    <string name="start_read_header_text">Start Reading Units</string>
+    <string name="end_read_header_text">End Reading Units</string>
+    <string name="end_read_header_date_text">End Reading Date</string>
+    <string name="customer_chrge_header_text">Customer Charges</string>
+    <string name="late_fee_chrge_header_text">Late Fee Charges</string>
+    <!--<string name="power_chrge_header_text">Electrical Duty</string>-->
+    <string name="power_chrge_header_text">విద్యుత్ సుంకము </string>
+    <string name="last_date_header_text">గడువు తేది   </string>
+    <string name="power_stop_date_header_text">Disconnection Date</string>
+    <string name="tccl_header_text">TCCL Number</string>
+    <string name="tccl_type_header_text">TCCL Type</string>
+    <string name="feader_header_text">Feader Number</string>
+    <string name="distributor_header_text">Distribution Number</string>
+    <string name="btn_text_print">Print Bill</string>
+
+    <string name="service_number_text">9063100306</string>
+    <string name="customer_name_text">Sabbavarapu Atchiyamma</string>
+    <string name="address_text">Kassimkota</string>
+    <string name="bill_date_text">03-04-2018</string>
+    <string name="category_text">4</string>
+    <string name="sub_category_text">01</string>
+    <string name="pre_start_read_text">69633</string>
+    <string name="pre_end_read_text">69833</string>
+    <string name="units_text">200</string>
+    <string name="amount_text">250</string>
+    <string name="status_text">Not Paid</string>
+    <string name="loading_txt">Loading...</string>
+
+
+    <string name="valid_reading">Units are Less than to last Reading</string>
+    <string name="valid_status">Status code between 01 to 30</string>
+    <string name="valid_seerviceno">Please enter valid service no</string>
+    <string name="seerviceno_notavail">Service No is not available</string>
+    <string name="meter_reading">Please enter present meter reading</string>
+    <string name="ok">OK</string>
+
+
+    <!--<string name="service_number_text">-</string>
+    <string name="customer_name_text">-</string>
+    <string name="address_text">-</string>
+    <string name="bill_date_text">-</string>
+    <string name="category_text">-</string>
+    <string name="sub_category_text">-</string>
+    <string name="pre_start_read_text">-</string>
+    <string name="pre_end_read_text">-</string>
+    <string name="units_text">-</string>
+    <string name="amount_text">-</string>
+    <string name="status_text">-</string>-->
+
+
+    <string name="set_logo">Set logo</string>
+    <string name="action_clear_device">Clear device</string>
+    <string name="action_connect_device">Connect Device</string>
+    <string name="action_unpair_device">Unpair Device</string>
+    <string name="choose_a_picture">Choose a picture to set as logo</string>
+    <string name="choose_gallery">Choose pic from Gallery</string>
+    <string name="choose_camera">Capture pic from Camera</string>
+    <string name="as_is_preview">Photo Preview</string>
+    <string name="printer_preview">Print Preview</string>
+    <string name="adjust_contrast">Adjust Contrast</string>
+    <string name="empty">empty</string>
+    <string name="width">Width</string>
+    <string name="height">Height</string>
+    <string name="logo_size">Logo size: </string>
+    <string name="maintain_aspect_ratio">Maintain Aspect Ratio</string>
+    <string name="invert_bitmap">Invert Image</string>
+    <string name="contrast_threshold">Contrast Threshold</string>
+    <string name="img_capture_cancelled">Image capture cancelled.</string>
+    <string name="img_capture_failed">Image capture failed</string>
+    <string name="img_too_small">Image too small, please choose a bigger one.</string>
+
+
+    <string-array name="payment_names">
+        <item>*99#</item>
+        <item>Aadhar Pay</item>
+        <item>Bharat QR</item>
+        <item>BHIM</item>
+        <item>Cash</item>
+        <item>Credit Card</item>
+        <item>Cheque</item>
+        <item>Debit Card</item>
+        <item>Jio Money</item>
+        <item>Net Banking</item>
+        <item>Paytm</item>
+        <item>PhonePe</item>
+        <item>Paytm QR</item>
+        <item>SBI UPI</item>
+        <item>PayUMoney</item>
+        <item>FreeCharge</item>
+        <item>Airtel Money</item>
+        <item>M-Pesa</item>
+    </string-array>
+
+    <string name="meterValue">Select Meter</string>
+    <string name="totalServices">Total Services</string>
+
+    <string-array name="burnt_meter_values">
+       <!-- <item>S-Phase</item>
+        <item>3-Phase</item>-->
+        <item>Select Meter</item>
+        <item>LT-trivector</item>
+        <item>HT-trivector</item>
+    </string-array>
+
+    <string-array name="burnt_meter_values1">
+        <item>Select Meter</item>
+         <item>S-Phase</item>
+         <item>3-Phase</item>
+      <!--  <item>LT-trivector</item>
+        <item>HT-trivector</item>-->
+    </string-array>
+
+    <string-array name="burnt_meter_values2">
+        <item>Select Meter</item>
+        <item>S-Phase</item>
+        <item>3-Phase</item>
+          <item>LT-trivector</item>
+          <item>HT-trivector</item>
+    </string-array>
+
+    <string-array name="status_values">
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+        <item>06</item>
+        <item>07</item>
+        <item>08</item>
+        <item>09</item>
+        <item>10</item>
+        <item>11</item>
+        <item>13</item>
+        <item>14</item>
+        <item>17</item>
+        <item>18</item>
+        <item>21</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ReportsActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/header_height"
+        android:background="@color/header_color"
+        android:id="@+id/header">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RESCO"
+            android:layout_centerInParent="true"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="@dimen/header_text_size"/>
+    </RelativeLayout>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/header">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/totalServicesLyt"
+        android:layout_marginTop="20dp">
+
+        <com.recsmeterreading.font.MyTextViewArial
+            android:id="@+id/totServTitleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:text="Total No Of Services               : "
+            android:textColor="@color/header_color"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+        <com.recsmeterreading.font.MyTextViewArial
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/totServTitleTv"
+            android:layout_marginLeft="15dp"
+            android:layout_centerVertical="true"
+            android:textSize="18dp"
+            android:text="11000"
+            android:textColor="@android:color/black"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black_overlay"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+    </RelativeLayout>
+<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+    android:layout_below="@+id/totalServicesLyt"
+    android:id="@+id/totalServicesBilledLyt"
+    android:layout_marginTop="20dp"
+    >
+
+    <com.recsmeterreading.font.MyTextViewArial
+        android:id="@+id/totServBillTitleTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:text="Total Billed Service No's        : "
+        android:textColor="@color/header_color"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+    <com.recsmeterreading.font.MyTextViewArial
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/totServBillTitleTv"
+        android:layout_marginLeft="15dp"
+        android:layout_centerVertical="true"
+        android:textSize="18dp"
+        android:text="9000"
+        android:textColor="@android:color/black"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black_overlay"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
+    </RelativeLayout>
+<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+    android:layout_below="@+id/totalServicesBilledLyt"
+    android:id="@+id/totalServicesUnbilledLyt"
+    android:layout_marginTop="20dp"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black_overlay"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        />
+
+    <com.recsmeterreading.font.MyTextViewArial
+        android:id="@+id/totServUnbillTitleTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:text="Total Unbilled Service No's   : "
+        android:textColor="@color/header_color"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+    <com.recsmeterreading.font.MyTextViewArial
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/totServUnbillTitleTv"
+        android:layout_marginLeft="15dp"
+        android:layout_centerVertical="true"
+        android:textSize="18dp"
+        android:text="2000"
+        android:textColor="@android:color/black"/>
+    </RelativeLayout>
+
+</RelativeLayout>
+</RelativeLayout>

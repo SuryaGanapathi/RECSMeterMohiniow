@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#377eb4">
+
+    <ImageView
+        android:id="@+id/app_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/recs_lancher" />
+
+    <TextView
+        android:id="@+id/logintext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/app_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/app_name"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:id="@+id/email_lyt"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/logintext"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/form_et_bg">
+
+        <AutoCompleteTextView
+            android:id="@+id/emailET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@null"
+            android:hint="ఏరియా కోడ్ "
+            android:maxLength="5"
+            android:inputType="number"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:singleLine="true"
+            android:textColor="#333333"
+            android:textColorHint="#000000" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/pwd_lyt"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/email_lyt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/form_et_bg"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/pwdET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@null"
+            android:hint="Enter Password"
+            android:inputType="textPassword"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:singleLine="true"
+            android:textColor="#333333"
+            android:textColorHint="#000000"
+            android:visibility="gone"
+            />
+
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/login_btn"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pwd_lyt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorPrimary"
+        android:text="లాగిన్"
+        android:textAllCaps="false"
+        android:textColor="#ffffff"
+        android:textSize="18dp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:id="@+id/designTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="డిజైన్డ్ అండ్ డెవలప్డ్ బై"
+            android:textColor="@color/white"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/compnayText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/designTxt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:text="anyEMI Online Services Pvt Ltd"
+            android:textColor="@color/white"
+            android:textSize="12dp" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/compnayText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:background="@color/white"
+            android:src="@drawable/logo_anyemi_web" />
+    </RelativeLayout>
+
+</RelativeLayout>

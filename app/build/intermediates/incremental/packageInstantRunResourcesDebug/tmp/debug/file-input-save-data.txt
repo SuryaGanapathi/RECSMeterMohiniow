@@ -1,0 +1,23 @@
+#Internal package file, do not edit.
+#Tue Jul 23 18:09:33 IST 2019
+2.base=E\:\\AndroidProjects\\recs-master_20-07-19\\recs-master\\app\\build\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
+0.path=fonts/Quicksand-Regular.ttf
+2.baseType=DIRECTORY
+3.base=E\:\\AndroidProjects\\recs-master_20-07-19\\recs-master\\app\\build\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
+2.set=ASSET
+1.path=fonts/akshar.ttf
+4.base=E\:\\AndroidProjects\\recs-master_20-07-19\\recs-master\\app\\build\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
+count=5
+2.path=json/tarrifData.json
+4.set=ASSET
+3.path=json/area_codes.json
+3.baseType=DIRECTORY
+1.set=ASSET
+4.path=json/serviceDetails.json
+1.baseType=DIRECTORY
+0.base=E\:\\AndroidProjects\\recs-master_20-07-19\\recs-master\\app\\build\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
+0.baseType=DIRECTORY
+3.set=ASSET
+1.base=E\:\\AndroidProjects\\recs-master_20-07-19\\recs-master\\app\\build\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
+4.baseType=DIRECTORY
+0.set=ASSET
