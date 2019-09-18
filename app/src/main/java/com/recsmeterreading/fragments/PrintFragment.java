@@ -509,34 +509,9 @@ public class PrintFragment extends Fragment implements View.OnClickListener {
                         mBtp.printTextLine("Bill Receipt");
                         mBtp.setPrintFontStyle(BtpCommands.FONT_STYLE_REGULAR);
                         mBtp.setPrintFontSize(BtpCommands.FONT_SIZE_NORMAL);
-                        // mBtp.printLineFeed();
-                        // mBtp.printTextLine("Narsipatnam Muncipality");
+
                         mBtp.printLineFeed();
                         mBtp.setAlignment(BtpCommands.LEFT_ALIGN);
-              /*  mBtp.printTextLine("సర్వీసు నెం  : "+getBillDetailsModel.getSCNO());
-                mBtp.printTextLine("కస్టమర్ పేరు : "+getBillDetailsModel.getCSM_CONSUMER_NAME());
-                mBtp.printTextLine("చిరునామా : "+getBillDetailsModel.getCSM_ADDRESS3());
-                mBtp.printTextLine("బిల్లు తేది : "+getBillDetailsModel.getSCNO());
-                mBtp.printTextLine("కేటగిరి : "+getBillDetailsModel.getCategory());
-                mBtp.printTextLine("సబ్ కేటగిరి : "+getBillDetailsModel.getSubcategory());
-                mBtp.printTextLine("లోడు : "+getBillDetailsModel.getCSM_CONNECTED_LOAD());
-                mBtp.printTextLine("ఫేజు : "+getBillDetailsModel.getPHASE());
-                mBtp.printTextLine("Meter Charges :"+getBillDetailsModel.getBurntValue());
-                mBtp.printTextLine("రీడింగు  ప్రారంభ యూనిట్లు : "+getBillDetailsModel.getOPRDNG());
-                mBtp.printTextLine("రీడింగు ముగింపు యూనిట్లు : "+getBillDetailsModel.getCLRDNG());
-                mBtp.printTextLine("రీడింగు ముగింపు తేది : "+getBillDetailsModel.getSCNO());
-                mBtp.printTextLine("గత నెల వినియోగము : "+getBillDetailsModel.getSCNO());
-                mBtp.printTextLine("డయల్ విలువ : "+"");
-                mBtp.printTextLine("యూనిట్లు : "+getBillDetailsModel.getUNITS());
-                mBtp.printTextLine("ఇంధనపు చార్జీలు : "+getBillDetailsModel.getENGCHG());
-                mBtp.printTextLine("కస్టమర్ చార్జీలు : "+getBillDetailsModel.getCUSCHG());
-                mBtp.printTextLine("ఆలస్యంగా చెల్లించినందుకు సర్ చార్జ : "+"\u20B9 0");
-                mBtp.printTextLine("విద్యుత్ సుంకము : "+getBillDetailsModel.getEDCHG());
-                mBtp.printTextLine("ఎన్ కె టి :"+getBillDetailsModel.getNkt());
-                mBtp.printTextLine("Arrears :"+getBillDetailsModel.getAdj_amount());
-                mBtp.printTextLine("మొత్తం బిల్లు :"+getBillDetailsModel.getBILLAMT());
-                mBtp.printTextLine("గడువు తేది         :"+"");
-                mBtp.printTextLine("సరఫరా నిలిపివేయు తేది    :"+"");*/
                         mBtp.printTextLine("Bill No             : "+getBillDetailsModel.getSTATUS().substring(2));
                         mBtp.printTextLine("Service No          : "+getBillDetailsModel.getSCNO());
                         mBtp.printTextLine("Meter No            : "+getBillDetailsModel.getCSM_METER_NO());
@@ -609,11 +584,6 @@ public class PrintFragment extends Fragment implements View.OnClickListener {
                         }else {
                             totalAmount = Double.parseDouble(getBillDetailsModel.getBILLAMT())- Double.parseDouble(getBillDetailsModel.getClose_bal());
                         }
-//                int totalAmount = Integer.parseInt(getBillDetailsModel.getBILLAMT())- Integer.parseInt(getBillDetailsModel.getNEWARREARS());
-//                int totalAmount = Integer.parseInt(getBillDetailsModel.getBILLAMT())- Integer.parseInt(getBillDetailsModel.getCLDEMAN());
-
-
-//                mBtp.printTextLine("Arrears             : Rs."+getBillDetailsModel.getCLDEMAN());
                         mBtp.printTextLine("Total Bill Amount   : Rs."+ totalAmount);
                         if(getBillDetailsModel.getCSM_CASTE().equals("SC") || getBillDetailsModel.getCSM_CASTE().equals("ST"))
                             mBtp.printTextLine("Adjustment Amount   : Rs."+getBillDetailsModel.getAdj_amount());
@@ -626,24 +596,7 @@ public class PrintFragment extends Fragment implements View.OnClickListener {
                         mBtp.printTextLine("Share Capital       : "+getBillDetailsModel.getCSM_SHARE());
 
 
-//                        mBtp.printTextLine("Payment Id    : " + printDetails.getTxn_payment_id());
-//                        mBtp.printTextLine("Name          : " + printDetails.getCustomer_name());
-//                        mBtp.printTextLine("Due Date      : " + date);
-//                        mBtp.printTextLine("Payment Date  : " + Utils.getCurrentDateTime());
-//                        mBtp.printTextLine("Assessment No : " + printDetails.getLoan_number());
-//                        mBtp.printTextLine("Pay Ref No    : " + printDetails.getPay_txn());
-//                        mBtp.printTextLine("Pay Ref No    : " + printDetails.getPay_txn());
-//                        mBtp.printTextLine("Tax Type      : " + t_type);
-//                        mBtp.printTextLine("Payment Type  : " + p_type);
-//                        mBtp.printTextLine("Bill Amount   : " + printDetails.getPaid_amount());
-//                        mBtp.printTextLine("Bank Charges  : " + printDetails.getBank_charges());
-//                        mBtp.printTextLine("Fine Amount   : " + printDetails.getPaid_over_due());
-//                        mBtp.printTextLine("User Charges  : " + printDetails.getService_tax());
-//                        mBtp.printTextLine("Total Amount  : " + printDetails.getTotal_amount());
                         mBtp.printLineFeed();
-//                        mBtp.printTextLine("********Charges as per CDMA Norms********");
-//                        mBtp.printTextLine("********Charges as per RECS Norms********");
-//                        mBtp.printLineFeed();
                         mBtp.printTextLine("                             Signature");
                         mBtp.printLineFeed();
                         mBtp.printTextLine("                 Thank you                ");
@@ -656,341 +609,7 @@ public class PrintFragment extends Fragment implements View.OnClickListener {
                         mBtp.printTextLine(" Support: recsrevenue@gmail.com");
                         mBtp.printLineFeed();
                         mBtp.printLineFeed();
-//
-//                    }else if(login_type.equals(Constants.LOGIN_TYPE_GVMC)){
-//
-//
-//                        mBtp.printLogo();
-//                        mBtp.printLineFeed();
-//                        mBtp.setAlignment(BtpCommands.CENTER_ALIGN);
-//                        mBtp.setPrintFontStyle(BtpCommands.FONT_STYLE_BOLD);
-//                        mBtp.setPrintFontSize(BtpCommands.FONT_SIZE_DOUBLE_W_H);
-//                        mBtp.printTextLine("-------" + print_type + "-------");
-//                        mBtp.setPrintFontSize(BtpCommands.FONT_SIZE_DOUBLE_WIDTH);
-//                        mBtp.printTextLine("Payment Slip");
-//                        mBtp.setPrintFontStyle(BtpCommands.FONT_STYLE_REGULAR);
-//                        mBtp.setPrintFontSize(BtpCommands.FONT_SIZE_NORMAL);
-//                        mBtp.printLineFeed();
-//                        mBtp.setAlignment(BtpCommands.LEFT_ALIGN);
-//
-//                        System.out.println(responseMap.get("Payment Id     "));
-//                        System.out.println(responseMap.get("Name           "));
-//                        System.out.println(responseMap.get("Due Date       "));
-//                        System.out.println(responseMap.get("Payment Date   "));
-//                        System.out.println(responseMap.get("Assessment NO  "));
-//                        System.out.println(responseMap.get("Tax Type       "));
-//                        System.out.println(responseMap.get("Payment Type   "));
-//                        System.out.println(responseMap.get("Bill Amount    "));
-//                        System.out.println(responseMap.get("Bank Charges   "));
-//                        System.out.println(responseMap.get("Fine Amount    "));
-//                        System.out.println(responseMap.get("Total Amount   "));
-//
-//                        mBtp.printTextLine("Payment Id     : " + responseMap.get("Payment Id     "));
-//                        mBtp.printTextLine("Name           : " + responseMap.get("Name           "));
-//                        mBtp.printTextLine("Due Date       : " + responseMap.get("Due Date       "));
-//                        mBtp.printTextLine("Payment Date   : " + responseMap.get("Payment Date   "));
-//                        mBtp.printTextLine("Assessment No  : " + responseMap.get("Assessment NO  "));
-//                        mBtp.printTextLine("Tax Type       : " + responseMap.get("Tax Type       "));
-//                        mBtp.printTextLine("Payment Type   : " + responseMap.get("Payment Type   "));
-//                        mBtp.printTextLine("Bill Amount    : " + responseMap.get("Bill Amount    "));
-//                        mBtp.printTextLine("Fine Amount    : " + responseMap.get("Fine Amount    "));
-//                        mBtp.printTextLine("Bank Charge    : " + responseMap.get("Bank Charges   "));
-//                        mBtp.printTextLine("Total Amount   : " + responseMap.get("Total Amount   "));
-//                        mBtp.printLineFeed();
-//                        mBtp.printTextLine("********Charges as per GVMC Norms********");
-//                        mBtp.printLineFeed();
-//                        mBtp.printTextLine("                             Signature");
-//                        mBtp.printLineFeed();
-//                        mBtp.printTextLine("         Thank you Payment Sucess         ");
-//                        mBtp.printTextLine(" *****************************************");
-//                        mBtp.printLineFeed();
-//                        mBtp.setPrintFontStyle(BtpCommands.FONT_STYLE_BOLD);
-//                        mBtp.setPrintFontSize(BtpCommands.FONT_SIZE_NORMAL);
-//                        mBtp.printTextLine(" Contact: 8008612200/8008615500");
-//                        mBtp.printTextLine(" Support: helpdesk@anyemi.com");
-//                        mBtp.printLineFeed();
-//                        mBtp.printLineFeed();
-//
-//                    }else if(login_type.equals(Constants.LOGIN_TYPE_APEPDCL)){
-//
-//
-//                        mBtp.printLogo();
-//                        mBtp.printLineFeed();
-//                        mBtp.setAlignment(BtpCommands.CENTER_ALIGN);
-//                        mBtp.setPrintFontStyle(BtpCommands.FONT_STYLE_BOLD);
-//                        mBtp.setPrintFontSize(BtpCommands.FONT_SIZE_DOUBLE_W_H);
-//                        mBtp.printTextLine("-----" + print_type + "-----");
-//                        mBtp.setPrintFontSize(BtpCommands.FONT_SIZE_DOUBLE_WIDTH);
-//                        mBtp.printTextLine("Payment Slip");
-//                        mBtp.setPrintFontStyle(BtpCommands.FONT_STYLE_REGULAR);
-//                        mBtp.setPrintFontSize(BtpCommands.FONT_SIZE_NORMAL);
-//                        mBtp.printLineFeed();
-//                        mBtp.setAlignment(BtpCommands.LEFT_ALIGN);
-//
-//                        System.out.println(responseMap.get("Payment Id     "));
-//                        System.out.println(responseMap.get("Payment Ref Id "));
-//                        System.out.println(responseMap.get("Service Number "));
-//                        System.out.println(responseMap.get("Name           "));
-//                        System.out.println(responseMap.get("Bill Date      "));
-//                        System.out.println(responseMap.get("Paid Date      "));
-//                        System.out.println(responseMap.get("Payment Type   "));
-//                        System.out.println(responseMap.get("Bill Amount    "));
-//                        System.out.println(responseMap.get("Service Charge "));
-//                        System.out.println(responseMap.get("Bank Charge    "));
-//                        System.out.println(responseMap.get("Total Amount   "));
-//
-//                        mBtp.printTextLine("Payment Id     : " + responseMap.get("Payment Id     "));
-//                        mBtp.printTextLine("Payment Ref Id : " + responseMap.get("Payment Ref Id "));
-//                        mBtp.printTextLine("Service Number : " + responseMap.get("Service Number "));
-//                        mBtp.printTextLine("Name           : " + responseMap.get("Name           "));
-//                        mBtp.printTextLine("Bill Date      : " + responseMap.get("Bill Date      "));
-//                        mBtp.printTextLine("Paid Date      : " + responseMap.get("Paid Date      "));
-//                        mBtp.printTextLine("Payment Type   : " + responseMap.get("Payment Type   "));
-//                        mBtp.printTextLine("Bill Amount    : " + responseMap.get("Bill Amount    "));
-//                        mBtp.printTextLine("Service Charge : " + responseMap.get("Service Charge "));
-//                        mBtp.printTextLine("Bank Charge    : " + responseMap.get("Bank Charge    "));
-//                        mBtp.printTextLine("Total Amount   : " + responseMap.get("Total Amount   "));
-//                        mBtp.printLineFeed();
-//                        mBtp.printTextLine("********Charges as per APEPDCL Norms********");
-//                        mBtp.printLineFeed();
-//                        mBtp.printTextLine("                             Signature");
-//                        mBtp.printLineFeed();
-//                        mBtp.printTextLine("         Thank you Payment Sucess         ");
-//                        mBtp.printTextLine(" *****************************************");
-//                        mBtp.printLineFeed();
-//                        mBtp.setPrintFontStyle(BtpCommands.FONT_STYLE_BOLD);
-//                        mBtp.setPrintFontSize(BtpCommands.FONT_SIZE_NORMAL);
-//                        mBtp.printTextLine(" Contact: 8008612200/8008615500");
-//                        mBtp.printTextLine(" Support: helpdesk@anyemi.com");
-//                        mBtp.printLineFeed();
-//                        mBtp.printLineFeed();
-//                    }
-//
-//
-//                }else{
-//                    Globals.showToast(getActivity(),"Error while reading data");
-//                }
 
-
-
-/*
-                if (printDetails != null) {
-                    if(login_type.equals(Constants.LOGIN_TYPE_COLLECTION_AGENT)|| login_type.equals(Constants.LOGIN_TYPE_CUSTOMER)){
-
-                        String t_type = "";
-                        String p_type = "";
-
-//                        if (printDetails.getTax_type() != null) {
-//                            int taxtype = aryTaxIds.indexOf(printDetails.getTax_type());
-//                            t_type=(aryTaxNames.get(taxtype));
-//                        }
-                        if (printDetails.getPayment_type() != null) {
-                            int taxtype = paymmentModesId.indexOf(printDetails.getPayment_type());
-                            p_type=(paymmentModesNames.get(taxtype));
-                        }
-
-                        String date = Utils.parseDate(printDetails.getDue_date());
-
-                       String p_total_amt="";
-                       String p_ref="";
-
-                       if (printDetails.getTotal_emi() != null) {
-                           p_total_amt=printDetails.getTotal_emi();
-                        }else if(printDetails.getTotal_amount() != null){
-                           p_total_amt=printDetails.getTotal_amount();
-                        }
-
-                        if (printDetails.getPay_ref() != null) {
-                            p_ref=printDetails.getPay_ref();
-                        }else if(printDetails.getTotal_amount() != null){
-                            p_ref="";
-                        }
-
-
-                        Double emi_amount=Double.parseDouble(printDetails.getTotal_amount());
-                        Double bankCharges=Double.parseDouble(printDetails.getBank_charges());
-                        Double user_charges=Double.parseDouble(printDetails.getService_charge());
-                        Double emi_amount_without_charge=emi_amount-user_charges;
-                        Double total_amount=emi_amount+bankCharges;
-
-
-                        System.out.println("-------" + "RECS" + "-------");
-                        mBtp.setPrintFontSize(BtpCommands.FONT_SIZE_DOUBLE_WIDTH);
-                        System.out.println("Payment Slip");
-                        System.out.println("Payment Id    : " + printDetails.getTxn_payment_id());
-                        System.out.println("Pay Ref Id    : " + p_ref);
-                        System.out.println("Service No    : " + printDetails.getLoan_number());
-                        System.out.println("Name          : " + printDetails.getCustomer_name());
-                        System.out.println("Due Date      : " + date);
-                        System.out.println("Paid Date     : " + Utils.getCurrentDateTime());
-                        System.out.println("Payment Type  : " + p_type);
-                        System.out.println("Bill Amount   : " + Utils.parseAmount(String.valueOf(emi_amount_without_charge)));
-                        System.out.println("User Charges  : " + Utils.parseAmount(printDetails.getService_charge()));
-                        System.out.println("Bank Charges  : " + Utils.parseAmount(printDetails.getBank_charges()));
-                        System.out.println("Total Amount  : " + Utils.parseAmount(String.valueOf(total_amount)));
-
-
-
-
-
-                        mBtp.printLogo();
-                        mBtp.printLineFeed();
-                        mBtp.setAlignment(BtpCommands.CENTER_ALIGN);
-                        mBtp.setPrintFontStyle(BtpCommands.FONT_STYLE_BOLD);
-                        mBtp.setPrintFontSize(BtpCommands.FONT_SIZE_DOUBLE_W_H);
-                        // mBtp.printTextLine("-------" + "CDMA" + "-------");
-                        mBtp.printTextLine("-------" + "RECS" + "-------");
-                        mBtp.setPrintFontSize(BtpCommands.FONT_SIZE_DOUBLE_WIDTH);
-                        mBtp.printTextLine("Payment Slip");
-                        mBtp.setPrintFontStyle(BtpCommands.FONT_STYLE_REGULAR);
-                        mBtp.setPrintFontSize(BtpCommands.FONT_SIZE_NORMAL);
-                        // mBtp.printLineFeed();
-                        // mBtp.printTextLine("Narsipatnam Muncipality");
-                        mBtp.printLineFeed();
-                        mBtp.setAlignment(BtpCommands.LEFT_ALIGN);
-                        mBtp.printTextLine("Payment Id    : " + printDetails.getTxn_payment_id());
-                        if (printDetails.getPay_ref() != null) {
-                            mBtp.printTextLine("Pay Ref Id    : " + printDetails.getPay_ref());
-                        }
-                        mBtp.printTextLine("Service No    : " + printDetails.getLoan_number());
-                        mBtp.printTextLine("Name          : " + printDetails.getCustomer_name());
-                        mBtp.printTextLine("Due Date      : " + date);
-                        mBtp.printTextLine("Payment Date  : " + Utils.getCurrentDateTime());
-                        mBtp.printTextLine("Payment Type  : " + p_type);
-                        mBtp.printTextLine("Bill Amount   : " + "Rs. "+Utils.parseAmount(String.valueOf(emi_amount_without_charge))+" /-");
-                        mBtp.printTextLine("User Charges  : " + "Rs. "+Utils.parseAmount(printDetails.getService_charge())+" /-");
-                        mBtp.printTextLine("Bank Charges  : " + "Rs. "+Utils.parseAmount(printDetails.getBank_charges())+" /-");
-                        mBtp.printTextLine("Total Amount  : " + "Rs. "+Utils.parseAmount(String.valueOf(total_amount))+" /-");
-                        mBtp.printLineFeed();
-                        //mBtp.printTextLine("********Charges as per CDMA Norms********");
-                        mBtp.printTextLine("********Charges as per RECS Norms********");
-                        mBtp.printLineFeed();
-                        mBtp.printTextLine("                             Signature");
-                        mBtp.printLineFeed();
-                        mBtp.printTextLine("         Thank you Payment Success         ");
-                        mBtp.printTextLine(" *****************************************");
-                        mBtp.printLineFeed();
-                        mBtp.setPrintFontStyle(BtpCommands.FONT_STYLE_BOLD);
-                        mBtp.setPrintFontSize(BtpCommands.FONT_SIZE_NORMAL);
-                        mBtp.printTextLine(" Contact: 8008612200/8008615500");
-                        mBtp.printTextLine(" Support: helpdesk@anyemi.com");
-                        mBtp.printLineFeed();
-                        mBtp.printLineFeed();
-
-                    }else if(login_type.equals(Constants.LOGIN_TYPE_GVMC)){
-
-
-                        mBtp.printLogo();
-                        mBtp.printLineFeed();
-                        mBtp.setAlignment(BtpCommands.CENTER_ALIGN);
-                        mBtp.setPrintFontStyle(BtpCommands.FONT_STYLE_BOLD);
-                        mBtp.setPrintFontSize(BtpCommands.FONT_SIZE_DOUBLE_W_H);
-                        mBtp.printTextLine("-------" + print_type + "-------");
-                        mBtp.setPrintFontSize(BtpCommands.FONT_SIZE_DOUBLE_WIDTH);
-                        mBtp.printTextLine("Payment Slip");
-                        mBtp.setPrintFontStyle(BtpCommands.FONT_STYLE_REGULAR);
-                        mBtp.setPrintFontSize(BtpCommands.FONT_SIZE_NORMAL);
-                        mBtp.printLineFeed();
-                        mBtp.setAlignment(BtpCommands.LEFT_ALIGN);
-
-                        System.out.println(responseMap.get("Payment Id     "));
-                        System.out.println(responseMap.get("Name           "));
-                        System.out.println(responseMap.get("Due Date       "));
-                        System.out.println(responseMap.get("Payment Date   "));
-                        System.out.println(responseMap.get("Assessment NO  "));
-                        System.out.println(responseMap.get("Tax Type       "));
-                        System.out.println(responseMap.get("Payment Type   "));
-                        System.out.println(responseMap.get("Bill Amount    "));
-                        System.out.println(responseMap.get("Bank Charges   "));
-                        System.out.println(responseMap.get("Fine Amount    "));
-                        System.out.println(responseMap.get("Total Amount   "));
-
-                        mBtp.printTextLine("Payment Id     : " + responseMap.get("Payment Id     "));
-                        mBtp.printTextLine("Name           : " + responseMap.get("Name           "));
-                        mBtp.printTextLine("Due Date       : " + responseMap.get("Due Date       "));
-                        mBtp.printTextLine("Payment Date   : " + responseMap.get("Payment Date   "));
-                        mBtp.printTextLine("Assessment No  : " + responseMap.get("Assessment NO  "));
-                        mBtp.printTextLine("Tax Type       : " + responseMap.get("Tax Type       "));
-                        mBtp.printTextLine("Payment Type   : " + responseMap.get("Payment Type   "));
-                        mBtp.printTextLine("Bill Amount    : " + responseMap.get("Bill Amount    "));
-                        mBtp.printTextLine("Fine Amount    : " + responseMap.get("Fine Amount    "));
-                        mBtp.printTextLine("Bank Charge    : " + responseMap.get("Bank Charges   "));
-                        mBtp.printTextLine("Total Amount   : " + responseMap.get("Total Amount   "));
-                        mBtp.printLineFeed();
-                        mBtp.printTextLine("********Charges as per GVMC Norms********");
-                        mBtp.printLineFeed();
-                        mBtp.printTextLine("                             Signature");
-                        mBtp.printLineFeed();
-                        mBtp.printTextLine("         Thank you Payment Sucess         ");
-                        mBtp.printTextLine(" *****************************************");
-                        mBtp.printLineFeed();
-                        mBtp.setPrintFontStyle(BtpCommands.FONT_STYLE_BOLD);
-                        mBtp.setPrintFontSize(BtpCommands.FONT_SIZE_NORMAL);
-                        mBtp.printTextLine(" Contact: 8008612200/8008615500");
-                        mBtp.printTextLine(" Support: helpdesk@anyemi.com");
-                        mBtp.printLineFeed();
-                        mBtp.printLineFeed();
-
-                    }else if(login_type.equals(Constants.LOGIN_TYPE_APEPDCL)){
-
-
-                        mBtp.printLogo();
-                        mBtp.printLineFeed();
-                        mBtp.setAlignment(BtpCommands.CENTER_ALIGN);
-                        mBtp.setPrintFontStyle(BtpCommands.FONT_STYLE_BOLD);
-                        mBtp.setPrintFontSize(BtpCommands.FONT_SIZE_DOUBLE_W_H);
-                        mBtp.printTextLine("-----" + print_type + "-----");
-                        mBtp.setPrintFontSize(BtpCommands.FONT_SIZE_DOUBLE_WIDTH);
-                        mBtp.printTextLine("Payment Slip");
-                        mBtp.setPrintFontStyle(BtpCommands.FONT_STYLE_REGULAR);
-                        mBtp.setPrintFontSize(BtpCommands.FONT_SIZE_NORMAL);
-                        mBtp.printLineFeed();
-                        mBtp.setAlignment(BtpCommands.LEFT_ALIGN);
-
-                        System.out.println(responseMap.get("Payment Id     "));
-                        System.out.println(responseMap.get("Payment Ref Id "));
-                        System.out.println(responseMap.get("Service Number "));
-                        System.out.println(responseMap.get("Name           "));
-                        System.out.println(responseMap.get("Bill Date      "));
-                        System.out.println(responseMap.get("Paid Date      "));
-                        System.out.println(responseMap.get("Payment Type   "));
-                        System.out.println(responseMap.get("Bill Amount    "));
-                        System.out.println(responseMap.get("Service Charge "));
-                        System.out.println(responseMap.get("Bank Charge    "));
-                        System.out.println(responseMap.get("Total Amount   "));
-
-                        mBtp.printTextLine("Payment Id     : " + responseMap.get("Payment Id     "));
-                        mBtp.printTextLine("Payment Ref Id : " + responseMap.get("Payment Ref Id "));
-                        mBtp.printTextLine("Service Number : " + responseMap.get("Service Number "));
-                        mBtp.printTextLine("Name           : " + responseMap.get("Name           "));
-                        mBtp.printTextLine("Bill Date      : " + responseMap.get("Bill Date      "));
-                        mBtp.printTextLine("Paid Date      : " + responseMap.get("Paid Date      "));
-                        mBtp.printTextLine("Payment Type   : " + responseMap.get("Payment Type   "));
-                        mBtp.printTextLine("Bill Amount    : " + responseMap.get("Bill Amount    "));
-                        mBtp.printTextLine("Service Charge : " + responseMap.get("Service Charge "));
-                        mBtp.printTextLine("Bank Charge    : " + responseMap.get("Bank Charge    "));
-                        mBtp.printTextLine("Total Amount   : " + responseMap.get("Total Amount   "));
-                        mBtp.printLineFeed();
-                        mBtp.printTextLine("********Charges as per APEPDCL Norms********");
-                        mBtp.printLineFeed();
-                        mBtp.printTextLine("                             Signature");
-                        mBtp.printLineFeed();
-                        mBtp.printTextLine("         Thank you Payment Sucess         ");
-                        mBtp.printTextLine(" *****************************************");
-                        mBtp.printLineFeed();
-                        mBtp.setPrintFontStyle(BtpCommands.FONT_STYLE_BOLD);
-                        mBtp.setPrintFontSize(BtpCommands.FONT_SIZE_NORMAL);
-                        mBtp.printTextLine(" Contact: 8008612200/8008615500");
-                        mBtp.printTextLine(" Support: helpdesk@anyemi.com");
-                        mBtp.printLineFeed();
-                        mBtp.printLineFeed();
-                    }
-
-
-                }else{
-                    Globals.showToast(getActivity(),"Error while reading data");
-                }
-*/
                         mListener.onFragmentInteractionC();
                     }else {
                         Toast.makeText(getActivity(), " Device Not Connected", Toast.LENGTH_SHORT).show();
@@ -1134,37 +753,81 @@ public class PrintFragment extends Fragment implements View.OnClickListener {
 
                 }
 
-//                if (printDetails != null) {
-//                    if(login_type.equals(Constants.LOGIN_TYPE_CDMA)){
-//
-//                        String t_type = "";
-//                        String p_type = "";
-//
-//                        if (printDetails.getTax_type() != null) {
-//                            int taxtype = aryTaxIds.indexOf(printDetails.getTax_type());
-//                            t_type=(aryTaxNames.get(taxtype));
-//                        }
-//
-//                        if (printDetails.getPayment_type() != null) {
-//                            int taxtype = paymmentModesId.indexOf(printDetails.getPayment_type());
-//                            p_type=(paymmentModesNames.get(taxtype));
-//                        }
-//
-//                        String date = Utils.parseDate(printDetails.getDuedates());
-//
                 break;
             case R.id.btnPrint:
-                try {
-                    // woyouService.printerSelfChecking(callback);//这里使用的AIDL方式打印
-                    woyouService.printTextWithFont("-------" + "RECS" + "-------;\n","",36,callback);
-                    woyouService.printTextWithFont("Bill Receipt; \n","",36,callback);
-                    woyouService.printTextWithFont("Bill No             : "+getBillDetailsModel.getSTATUS().substring(2)+";\n","",36,callback);
-                    woyouService.printTextWithFont("Service No          : "+getBillDetailsModel.getSCNO()+";\n","",36,callback);
-                    woyouService.printTextWithFont("Meter No            : "+getBillDetailsModel.getCSM_METER_NO()+"\n","",36,callback);
-                    woyouService.printTextWithFont("Consumer Name       : "+getBillDetailsModel.getCSM_CONSUMER_NAME()+" ;\n","",36,callback);
-                    woyouService.printTextWithFont("Address             : "+getBillDetailsModel.getCSM_ADDRESS3()+"\n","",36,callback);
-                } catch (RemoteException e) {
-                    e.printStackTrace();
+                if(report == 0) {
+                    if(woyouService!=null)
+                    try {
+                        // woyouService.printerSelfChecking(callback);//这里使用的AIDL方式打印
+                        woyouService.printTextWithFont("-------" + "RECS" + "-------;\n", "", 36, callback);
+                        woyouService.printTextWithFont("Bill Receipt;\n", "", 36, callback);
+                        woyouService.printTextWithFont("Bill No             : " + getBillDetailsModel.getSTATUS().substring(2) + ";\n", "", 36, callback);
+                        woyouService.printTextWithFont("Service No          : " + getBillDetailsModel.getSCNO() + ";\n", "", 36, callback);
+                        woyouService.printTextWithFont("Meter No            : " + getBillDetailsModel.getCSM_METER_NO() + "\n", "", 36, callback);
+                        woyouService.printTextWithFont("Consumer Name       : " + getBillDetailsModel.getCSM_CONSUMER_NAME() + " ;\n", "", 36, callback);
+                        woyouService.printTextWithFont("Address             : " + getBillDetailsModel.getCSM_ADDRESS3() + "\n", "", 36, callback);
+                    } catch (RemoteException e) {
+                        e.printStackTrace();
+                    }
+                }else  if(report == 5){
+                    try {
+                    if(title.equals("TotalAmount") || title.equals("TotalUnits")) {
+
+
+                            woyouService.printTextWithFont("-------" + "RECS" + "-------;\n", "", 36, callback);
+                            woyouService.printTextWithFont("Report;\n", "", 36, callback);
+                            woyouService.printTextWithFont(   "Category          : "+category+";\n", "", 36, callback);
+                            woyouService.printTextWithFont(      "                 Thank you                "+";\n", "", 36, callback);
+
+
+
+                    }else {
+                        if(serviceNoList != null && serviceNoList.size()>0){
+                            Toast.makeText(getActivity(), "data count"+serviceNoList.size(), Toast.LENGTH_SHORT).show();
+                        }else
+                            Toast.makeText(getActivity(), "null data", Toast.LENGTH_SHORT).show();
+                        if(serviceNoList != null){
+                            woyouService.printTextWithFont("-------" + "RECS" + "-------;\n", "", 36, callback);
+                            woyouService.printTextWithFont("Report;\n", "", 36, callback);
+                            for(ServiceNo serviceNo: serviceNoList ){
+                                woyouService.printTextWithFont(      "Service No          : "+serviceNo.getSCNO()+";\n", "", 36, callback);
+
+                            }
+                            woyouService.printTextWithFont(      "                 Thank you                "+";\n", "", 36, callback);
+
+                            woyouService.printTextWithFont(       " Toll Free No: 1800 425 1539"+";\n", "", 36, callback);
+                            woyouService.printTextWithFont(        " Support: recsrevenue@gmail.com"+";\n", "", 36, callback);
+
+                        }
+                    }
+                    } catch (RemoteException e) {
+                        e.printStackTrace();
+                    }
+
+                }else {
+                    if(serviceNumberList != null && serviceNumberList.size()>0){
+
+                        Toast.makeText(getActivity(), "Number Of Record: "+serviceNumberList.size(), Toast.LENGTH_SHORT).show();
+                    }else
+                        Toast.makeText(getActivity(), "null data 3", Toast.LENGTH_SHORT).show();
+                    if(serviceNumberList != null){
+                        try {
+                            woyouService.printTextWithFont("-------" + "RECS" + "-------;\n", "", 36, callback);
+                            woyouService.printTextWithFont("Unbilled Report;\n", "", 36, callback);
+                            for(ServiceNumber serviceNo: serviceNumberList ){
+                                woyouService.printTextWithFont("Category: "+serviceNo.getCategory()+" & No Of Services: "+ serviceNo.getValue()+";\n", "", 36, callback);
+
+                            }
+                            woyouService.printTextWithFont(      "                 Thank you                "+";\n", "", 36, callback);
+
+                            woyouService.printTextWithFont(       " Toll Free No: 1800 425 1539"+";\n", "", 36, callback);
+                            woyouService.printTextWithFont(        " Support: recsrevenue@gmail.com"+";\n", "", 36, callback);
+
+
+                        } catch (RemoteException e) {
+                            e.printStackTrace();
+                        }
+                    }
                 }
 
                 break;
