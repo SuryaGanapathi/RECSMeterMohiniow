@@ -185,6 +185,7 @@ public class BluetoothPrinterMain extends AppCompatActivity implements PrintFrag
         intent.setAction("woyou.aidlservice.jiuiv5.IWoyouService");
         startService(intent);//启动打印服务
         bindService(intent, connService, Context.BIND_AUTO_CREATE);
+
         fragMgr.beginTransaction().replace(R.id.container, nm)
                 .addToBackStack(cHomeStack).commit();
     }
