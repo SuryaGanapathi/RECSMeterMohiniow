@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\AndroidProjects\\recs-master_20-07-19\\recs-master\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-te\\values-te.xml",
+            "outputFile": "D:\\anroidProjects\\RECS_Moni\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-te\\values-te.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\b79f3cc3744ff7b31a037bc9641a452a\\res\\values-te\\values-te.xml",
+                    "source": "C:\\Users\\Ideapad\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\c9ebef422eb3b59c41589a8149baf0e5\\res\\values-te\\values-te.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\144d1832cdcd7a7d0f359c1d3876ed7a\\res\\values-te\\values-te.xml",
+                    "source": "C:\\Users\\Ideapad\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\c8d34b4d11ec8c10b2268d6736b6d933\\res\\values-te\\values-te.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

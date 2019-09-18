@@ -1,4 +1,4 @@
-#Wed Jul 24 22:27:30 IST 2019
-base.0=E\:\\AndroidProjects\\recs-master_20-07-19\\recs-master\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
+#Wed Sep 18 13:04:11 IST 2019
+base.0=D\:\\anroidProjects\\RECS_Moni\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
 path.0=classes.dex
 renamed.0=classes.dex

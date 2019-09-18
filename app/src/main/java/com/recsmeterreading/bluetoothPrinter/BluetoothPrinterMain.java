@@ -1,3 +1,5 @@
+
+
 /**
  * Copyright 2014 NGX Technologies Pvt. Ltd http://ngxtech.com
  * <p>
@@ -19,12 +21,17 @@ package com.recsmeterreading.bluetoothPrinter;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog.Builder;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.IBinder;
 import android.os.Message;
+import android.os.RemoteException;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -51,9 +58,15 @@ import com.recsmeterreading.fragments.PrintFragment;
 import com.recsmeterreading.model.GetBillDetailsModel;
 import com.recsmeterreading.model.ServiceNo;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import woyou.aidlservice.jiuiv5.ICallback;
+import woyou.aidlservice.jiuiv5.IWoyouService;
 
 public class BluetoothPrinterMain extends AppCompatActivity implements PrintFragment.OnFragmentInteractionListenerC{
+
     @Override
     public boolean onSupportNavigateUp() {
         return super.onSupportNavigateUp();
@@ -148,7 +161,7 @@ public class BluetoothPrinterMain extends AppCompatActivity implements PrintFrag
             e.printStackTrace();
         }
 
-      //  nm = new AsciiFragment();
+        //  nm = new AsciiFragment();
         nm = new PrintFragment();
 
         Bundle parametros = getIntent().getExtras();
@@ -167,6 +180,11 @@ public class BluetoothPrinterMain extends AppCompatActivity implements PrintFrag
             nm.setArguments(parametros);
 
         }
+        Intent intent = new Intent();
+        intent.setPackage("woyou.aidlservice.jiuiv5");
+        intent.setAction("woyou.aidlservice.jiuiv5.IWoyouService");
+        startService(intent);//启动打印服务
+        bindService(intent, connService, Context.BIND_AUTO_CREATE);
         fragMgr.beginTransaction().replace(R.id.container, nm)
                 .addToBackStack(cHomeStack).commit();
     }
@@ -235,7 +253,27 @@ public class BluetoothPrinterMain extends AppCompatActivity implements PrintFrag
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        mBtp.onActivityResult(requestCode, resultCode, data, this);
+        if (requestCode == 1 && data != null) {
+            Bundle bundle = data.getExtras();
+            ArrayList<HashMap<String, String>> result = (ArrayList<HashMap<String, String>>) bundle
+                    .getSerializable("data");
+
+            Iterator<HashMap<String, String>> it = result.iterator();
+
+            while (it.hasNext()) {
+                HashMap<String, String> hashMap = it.next();
+
+                Log.i("sunmi", hashMap.get("TYPE"));//this is the type of the code
+                Log.i("sunmi", hashMap.get("VALUE"));//this is the result of the code
+
+                Toast.makeText(BluetoothPrinterMain.this,""+hashMap.get("VALUE"),Toast.LENGTH_LONG);
+                //   txt.setText(hashMap.get("VALUE"));
+
+            }
+
+        }else
+
+            mBtp.onActivityResult(requestCode, resultCode, data, this);
     }
 
     @Override
@@ -377,6 +415,44 @@ public class BluetoothPrinterMain extends AppCompatActivity implements PrintFrag
         setResult(Activity.RESULT_OK,resultIntent);
         finish();
     }
+    public static IWoyouService woyouService;
+
+    private ServiceConnection connService = new ServiceConnection() {
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+            woyouService = null;
+        }
+
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            woyouService = IWoyouService.Stub.asInterface(service);
+        }
+    };
+
+    ICallback callback = new ICallback.Stub() {
+
+        @Override
+        public void onRunResult(boolean success) throws RemoteException {
+        }
+
+        @Override
+        public void onReturnString(final String value) throws RemoteException {
+        }
+
+        @Override
+        public void onRaiseException(int code, final String msg)
+                throws RemoteException {
+        }
+
+        @Override
+        public void onPrintResult(int code, String msg) throws RemoteException {
+
+        }
+    };
+
 }
+
+
 
 

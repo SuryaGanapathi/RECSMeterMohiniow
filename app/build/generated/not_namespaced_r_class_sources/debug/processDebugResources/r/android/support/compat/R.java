@@ -85,25 +85,25 @@ public final class R {
         public static final int actions = 0x7f09001e;
         public static final int async = 0x7f090032;
         public static final int blocking = 0x7f090041;
-        public static final int chronometer = 0x7f09006f;
-        public static final int forever = 0x7f0900aa;
-        public static final int icon = 0x7f0900b7;
-        public static final int icon_group = 0x7f0900b8;
-        public static final int info = 0x7f0900bd;
-        public static final int italic = 0x7f0900bf;
-        public static final int line1 = 0x7f0900cd;
-        public static final int line3 = 0x7f0900ce;
-        public static final int normal = 0x7f0900f3;
-        public static final int notification_background = 0x7f0900f4;
-        public static final int notification_main_column = 0x7f0900f5;
-        public static final int notification_main_column_container = 0x7f0900f6;
-        public static final int right_icon = 0x7f09011e;
-        public static final int right_side = 0x7f09011f;
-        public static final int tag_transition_group = 0x7f090160;
-        public static final int text = 0x7f090163;
-        public static final int text2 = 0x7f090165;
-        public static final int time = 0x7f090171;
-        public static final int title = 0x7f090172;
+        public static final int chronometer = 0x7f090070;
+        public static final int forever = 0x7f0900ab;
+        public static final int icon = 0x7f0900b8;
+        public static final int icon_group = 0x7f0900b9;
+        public static final int info = 0x7f0900be;
+        public static final int italic = 0x7f0900c0;
+        public static final int line1 = 0x7f0900ce;
+        public static final int line3 = 0x7f0900cf;
+        public static final int normal = 0x7f0900f4;
+        public static final int notification_background = 0x7f0900f5;
+        public static final int notification_main_column = 0x7f0900f6;
+        public static final int notification_main_column_container = 0x7f0900f7;
+        public static final int right_icon = 0x7f090120;
+        public static final int right_side = 0x7f090121;
+        public static final int tag_transition_group = 0x7f090162;
+        public static final int text = 0x7f090165;
+        public static final int text2 = 0x7f090167;
+        public static final int time = 0x7f090173;
+        public static final int title = 0x7f090174;
     }
     public static final class integer {
         private integer() {}

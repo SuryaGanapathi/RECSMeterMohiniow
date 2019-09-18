@@ -27,6 +27,7 @@
         android:largeHeap="true"
         android:roundIcon="@drawable/recs_lancher"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity android:name="com.recsmeterreading.activities.UnBilledReportD" />
         <activity android:name="com.recsmeterreading.activities.SigninActivity" >

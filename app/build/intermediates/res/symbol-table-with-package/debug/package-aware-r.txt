@@ -944,6 +944,7 @@ id btnLeftAlign
 id btnNumber
 id btnNumber1
 id btnPaperStatus
+id btnPrint
 id btnPrintAsciiText
 id btnPrintKnAksharamale
 id btnPrintLineFeed
@@ -1136,6 +1137,7 @@ id poweDisconTv
 id powerChargesTv
 id previousEndReadTv
 id previousStartReadTv
+id print
 id printBtn
 id printU
 id print_report

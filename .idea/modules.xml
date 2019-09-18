@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/RECS_Moni.iml" filepath="$PROJECT_DIR$/RECS_Moni.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/recs-master.iml" filepath="$PROJECT_DIR$/recs-master.iml" />
     </modules>
   </component>
 </project>

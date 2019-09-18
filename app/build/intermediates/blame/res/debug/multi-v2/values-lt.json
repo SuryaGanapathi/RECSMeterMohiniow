@@ -1,20 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\AndroidProjects\\recs-master_20-07-19\\recs-master\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-lt\\values-lt.xml",
+            "outputFile": "D:\\anroidProjects\\RECS_Moni\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-lt\\values-lt.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\b79f3cc3744ff7b31a037bc9641a452a\\res\\values-lt\\values-lt.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,221,322,435,522,631,752,834,915,1000,1109,1218,1318,1428,1532,1645,1821,1922",
-                        "endColumns": "115,100,112,86,108,120,81,80,84,108,108,99,109,103,112,175,100,82",
-                        "endOffsets": "216,317,430,517,626,747,829,910,995,1104,1213,1313,1423,1527,1640,1816,1917,2000"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\144d1832cdcd7a7d0f359c1d3876ed7a\\res\\values-lt\\values-lt.xml",
+                    "source": "C:\\Users\\Ideapad\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\c8d34b4d11ec8c10b2268d6736b6d933\\res\\values-lt\\values-lt.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -28,6 +18,16 @@
                         "startOffsets": "2005",
                         "endColumns": "100",
                         "endOffsets": "2101"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Ideapad\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\c9ebef422eb3b59c41589a8149baf0e5\\res\\values-lt\\values-lt.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,221,322,435,522,631,752,834,915,1000,1109,1218,1318,1428,1532,1645,1821,1922",
+                        "endColumns": "115,100,112,86,108,120,81,80,84,108,108,99,109,103,112,175,100,82",
+                        "endOffsets": "216,317,430,517,626,747,829,910,995,1104,1213,1313,1423,1527,1640,1816,1917,2000"
                     }
                 }
             ]

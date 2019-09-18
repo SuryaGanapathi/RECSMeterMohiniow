@@ -1,20 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\AndroidProjects\\recs-master_20-07-19\\recs-master\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-th\\values-th.xml",
+            "outputFile": "D:\\anroidProjects\\RECS_Moni\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-th\\values-th.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\b79f3cc3744ff7b31a037bc9641a452a\\res\\values-th\\values-th.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,210,308,416,505,607,717,794,872,953,1061,1165,1263,1371,1476,1577,1730,1825",
-                        "endColumns": "104,97,107,88,101,109,76,77,80,107,103,97,107,104,100,152,94,80",
-                        "endOffsets": "205,303,411,500,602,712,789,867,948,1056,1160,1258,1366,1471,1572,1725,1820,1901"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\144d1832cdcd7a7d0f359c1d3876ed7a\\res\\values-th\\values-th.xml",
+                    "source": "C:\\Users\\Ideapad\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\c8d34b4d11ec8c10b2268d6736b6d933\\res\\values-th\\values-th.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -28,6 +18,16 @@
                         "startOffsets": "1906",
                         "endColumns": "100",
                         "endOffsets": "2002"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Ideapad\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\c9ebef422eb3b59c41589a8149baf0e5\\res\\values-th\\values-th.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,210,308,416,505,607,717,794,872,953,1061,1165,1263,1371,1476,1577,1730,1825",
+                        "endColumns": "104,97,107,88,101,109,76,77,80,107,103,97,107,104,100,152,94,80",
+                        "endOffsets": "205,303,411,500,602,712,789,867,948,1056,1160,1258,1366,1471,1572,1725,1820,1901"
                     }
                 }
             ]

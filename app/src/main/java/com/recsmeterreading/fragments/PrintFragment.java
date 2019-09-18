@@ -3,6 +3,7 @@ package com.recsmeterreading.fragments;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.RemoteException;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -36,6 +37,8 @@ import java.util.Map;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import woyou.aidlservice.jiuiv5.ICallback;
+import woyou.aidlservice.jiuiv5.IWoyouService;
 
 /**
  * Created by SuryaTejaChalla on 04-01-2018.
@@ -46,10 +49,11 @@ public class PrintFragment extends Fragment implements View.OnClickListener {
     private OnFragmentInteractionListenerC mListener;
 
     private BluetoothPrinter mBtp = BluetoothPrinterMain.mBtp;
+    private IWoyouService woyouService=BluetoothPrinterMain.woyouService;
     Bundle r_bundle;
     String print_type;
     Map<String, String> responseMap;
-//    CollectionsModel.CollectionsBean printDetails;
+    //    CollectionsModel.CollectionsBean printDetails;
     private EditText mEdit;
     private TextView tvSeekBar;
     private int minutes = 1440;
@@ -134,16 +138,16 @@ public class PrintFragment extends Fragment implements View.OnClickListener {
 //            }
         }else if(report == 11){
 
-        Bundle args = r_bundle.getBundle("data");
+            Bundle args = r_bundle.getBundle("data");
 
-        if(args!=null){
-            serviceNumberList = (List<ServiceNumber>)args.getSerializable("ARRAYLIST");
-            if (serviceNumberList != null) {
-                Log.e("print 3",""+serviceNumberList.size());
-            }else {
-                Log.e("print 3a","aaaaa");
+            if(args!=null){
+                serviceNumberList = (List<ServiceNumber>)args.getSerializable("ARRAYLIST");
+                if (serviceNumberList != null) {
+                    Log.e("print 3",""+serviceNumberList.size());
+                }else {
+                    Log.e("print 3a","aaaaa");
+                }
             }
-        }
 
         }else {
             getBillDetailsModel = (GetBillDetailsModel) r_bundle.getSerializable("data") ;
@@ -197,7 +201,10 @@ public class PrintFragment extends Fragment implements View.OnClickListener {
 
         Button btnPrintText = v.findViewById(R.id.btnPrintText);
         btnPrintText.setOnClickListener(this);
-        btnPrintText.setText("Print");
+        btnPrintText.setText("Print Out");
+        Button btnPrint = v.findViewById(R.id.btnPrint);
+        btnPrint.setOnClickListener(this);
+
 
         Button btnSetLogo = v.findViewById(R.id.btnChangeLogo);
         btnSetLogo.setOnClickListener(new View.OnClickListener() {
@@ -1145,14 +1152,50 @@ public class PrintFragment extends Fragment implements View.OnClickListener {
 //
 //                        String date = Utils.parseDate(printDetails.getDuedates());
 //
-                                      break;
+                break;
+            case R.id.btnPrint:
+                try {
+                    // woyouService.printerSelfChecking(callback);//这里使用的AIDL方式打印
+                    woyouService.printTextWithFont("-------" + "RECS" + "-------;\n","",36,callback);
+                    woyouService.printTextWithFont("Bill Receipt; \n","",36,callback);
+                    woyouService.printTextWithFont("Bill No             : "+getBillDetailsModel.getSTATUS().substring(2)+";\n","",36,callback);
+                    woyouService.printTextWithFont("Service No          : "+getBillDetailsModel.getSCNO()+";\n","",36,callback);
+                    woyouService.printTextWithFont("Meter No            : "+getBillDetailsModel.getCSM_METER_NO()+"\n","",36,callback);
+                    woyouService.printTextWithFont("Consumer Name       : "+getBillDetailsModel.getCSM_CONSUMER_NAME()+" ;\n","",36,callback);
+                    woyouService.printTextWithFont("Address             : "+getBillDetailsModel.getCSM_ADDRESS3()+"\n","",36,callback);
+                } catch (RemoteException e) {
+                    e.printStackTrace();
                 }
 
+                break;
         }
+
+    }
 
     public interface OnFragmentInteractionListenerC {
         void onFragmentInteractionC();
 
     }
-    }
+    ICallback callback = new ICallback.Stub() {
+
+        @Override
+        public void onRunResult(boolean success) throws RemoteException {
+        }
+
+        @Override
+        public void onReturnString(final String value) throws RemoteException {
+        }
+
+        @Override
+        public void onRaiseException(int code, final String msg)
+                throws RemoteException {
+        }
+
+        @Override
+        public void onPrintResult(int code, String msg) throws RemoteException {
+
+        }
+    };
+
+}
 
