@@ -422,6 +422,7 @@ public class BluetoothPrinterMain extends AppCompatActivity implements PrintFrag
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
+
             woyouService = null;
         }
 

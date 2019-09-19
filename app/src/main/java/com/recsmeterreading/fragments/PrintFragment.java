@@ -760,13 +760,25 @@ public class PrintFragment extends Fragment implements View.OnClickListener {
                     if(woyouService!=null)
                     try {
                         // woyouService.printerSelfChecking(callback);//这里使用的AIDL方式打印
-                        woyouService.printTextWithFont("-------" + "RECS" + "-------;\n", "", 36, callback);
-                        woyouService.printTextWithFont("Bill Receipt;\n", "", 36, callback);
-                        woyouService.printTextWithFont("Bill No             : " + getBillDetailsModel.getSTATUS().substring(2) + ";\n", "", 36, callback);
-                        woyouService.printTextWithFont("Service No          : " + getBillDetailsModel.getSCNO() + ";\n", "", 36, callback);
-                        woyouService.printTextWithFont("Meter No            : " + getBillDetailsModel.getCSM_METER_NO() + "\n", "", 36, callback);
-                        woyouService.printTextWithFont("Consumer Name       : " + getBillDetailsModel.getCSM_CONSUMER_NAME() + " ;\n", "", 36, callback);
-                        woyouService.printTextWithFont("Address             : " + getBillDetailsModel.getCSM_ADDRESS3() + "\n", "", 36, callback);
+                        woyouService.printTextWithFont("-------" + "RECS" + "-------\n", "BOLD", 30, callback);
+                        woyouService.printTextWithFont("Bill Receipt\n", "", 36, callback);
+                        woyouService.printTextWithFont("Bill No             : " + getBillDetailsModel.getSTATUS().substring(2) + "\n", "", 16, callback);
+                        woyouService.printTextWithFont("Service No          : " + getBillDetailsModel.getSCNO() + "\n", "", 16, callback);
+                        woyouService.printTextWithFont("Meter No            : " + getBillDetailsModel.getCSM_METER_NO() + "\n", "", 16, callback);
+                        woyouService.printTextWithFont("Consumer Name       : " + getBillDetailsModel.getCSM_CONSUMER_NAME() + " \n", "", 16, callback);
+                        woyouService.printTextWithFont("Address             : " + getBillDetailsModel.getCSM_ADDRESS3() + "\n", "", 16, callback);
+                        if(getBillDetailsModel.getCSM_AADHAAR_NO().length()>=12){
+                            woyouService.printTextWithFont("Aadhar Number       : "+"XXXXXXXXX"+getBillDetailsModel.getCSM_AADHAAR_NO().substring(9)+ "\n", "", 16, callback);
+
+                        }
+
+                        if(getBillDetailsModel.getCSM_PHONE_NO().length() >=10){
+                            woyouService.printTextWithFont("Phone Number        : "+"XXXXXXX"+getBillDetailsModel.getCSM_PHONE_NO().substring(7)+ "\n", "", 16, callback);
+
+                        }else {
+                            woyouService.printTextWithFont("Phone Number        : "+"NA" + "\n", "", 16, callback);
+                            }
+
                     } catch (RemoteException e) {
                         e.printStackTrace();
                     }
@@ -787,16 +799,16 @@ public class PrintFragment extends Fragment implements View.OnClickListener {
                         }else
                             Toast.makeText(getActivity(), "null data", Toast.LENGTH_SHORT).show();
                         if(serviceNoList != null){
-                            woyouService.printTextWithFont("-------" + "RECS" + "-------;\n", "", 36, callback);
+                            woyouService.printTextWithFont("-------" + "RECS" + "-------\n", "", 36, callback);
                             woyouService.printTextWithFont("Report;\n", "", 36, callback);
                             for(ServiceNo serviceNo: serviceNoList ){
-                                woyouService.printTextWithFont(      "Service No          : "+serviceNo.getSCNO()+";\n", "", 36, callback);
+                                woyouService.printTextWithFont(      "Service No          : "+serviceNo.getSCNO()+"\n", "", 16, callback);
 
                             }
-                            woyouService.printTextWithFont(      "                 Thank you                "+";\n", "", 36, callback);
+                            woyouService.printTextWithFont(      "                 Thank you                "+"\n", "", 16, callback);
 
-                            woyouService.printTextWithFont(       " Toll Free No: 1800 425 1539"+";\n", "", 36, callback);
-                            woyouService.printTextWithFont(        " Support: recsrevenue@gmail.com"+";\n", "", 36, callback);
+                            woyouService.printTextWithFont(       " Toll Free No: 1800 425 1539"+"\n", "", 16, callback);
+                            woyouService.printTextWithFont(        " Support: recsrevenue@gmail.com"+"\n", "", 16, callback);
 
                         }
                     }
