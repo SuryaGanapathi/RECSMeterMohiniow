@@ -50,6 +50,7 @@ public class PrintFragment extends Fragment implements View.OnClickListener {
 
     private BluetoothPrinter mBtp = BluetoothPrinterMain.mBtp;
     private IWoyouService woyouService=BluetoothPrinterMain.woyouService;
+    private ICallback callback=BluetoothPrinterMain.callback;
     Bundle r_bundle;
     String print_type;
     Map<String, String> responseMap;
@@ -770,11 +771,10 @@ public class PrintFragment extends Fragment implements View.OnClickListener {
                         e.printStackTrace();
                     }
                 }else  if(report == 5){
+                    if(woyouService!=null)
                     try {
                     if(title.equals("TotalAmount") || title.equals("TotalUnits")) {
-
-
-                            woyouService.printTextWithFont("-------" + "RECS" + "-------;\n", "", 36, callback);
+                            woyouService.printTextWithFont("-------" + "RECS" + "-------;\n\n", "", 36, callback);
                             woyouService.printTextWithFont("Report;\n", "", 36, callback);
                             woyouService.printTextWithFont(   "Category          : "+category+";\n", "", 36, callback);
                             woyouService.printTextWithFont(      "                 Thank you                "+";\n", "", 36, callback);
@@ -811,6 +811,7 @@ public class PrintFragment extends Fragment implements View.OnClickListener {
                     }else
                         Toast.makeText(getActivity(), "null data 3", Toast.LENGTH_SHORT).show();
                     if(serviceNumberList != null){
+                        if(woyouService!=null)
                         try {
                             woyouService.printTextWithFont("-------" + "RECS" + "-------;\n", "", 36, callback);
                             woyouService.printTextWithFont("Unbilled Report;\n", "", 36, callback);
@@ -839,26 +840,6 @@ public class PrintFragment extends Fragment implements View.OnClickListener {
         void onFragmentInteractionC();
 
     }
-    ICallback callback = new ICallback.Stub() {
-
-        @Override
-        public void onRunResult(boolean success) throws RemoteException {
-        }
-
-        @Override
-        public void onReturnString(final String value) throws RemoteException {
-        }
-
-        @Override
-        public void onRaiseException(int code, final String msg)
-                throws RemoteException {
-        }
-
-        @Override
-        public void onPrintResult(int code, String msg) throws RemoteException {
-
-        }
-    };
 
 }
 

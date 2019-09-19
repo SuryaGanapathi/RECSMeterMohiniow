@@ -431,7 +431,7 @@ public class BluetoothPrinterMain extends AppCompatActivity implements PrintFrag
         }
     };
 
-    ICallback callback = new ICallback.Stub() {
+   public static ICallback callback = new ICallback.Stub() {
 
         @Override
         public void onRunResult(boolean success) throws RemoteException {
