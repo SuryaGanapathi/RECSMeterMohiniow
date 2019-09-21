@@ -765,11 +765,15 @@ public class PrintFragment extends Fragment implements View.OnClickListener {
                     if(woyouService!=null)
                     try {
                         // bitmap factory
-                        BitmapFactory.Options options = new BitmapFactory.Options();
-                        final Bitmap bitmap = BitmapFactory.decodeFile(fileUri.getPath(),
-                                options);
-                       // Bitmap b = NgxImageFactory.LoadLogo(fileUri.getPath());
-                        woyouService.printBitmap(bitmap,callback);
+                        if(fileUri!=null) {
+                          //  BitmapFactory.Options options = new BitmapFactory.Options();
+/*
+                            final Bitmap bitmap = BitmapFactory.decodeFile(fileUri.getPath(),
+                                    options);
+*/
+                             Bitmap bitmap = NgxImageFactory.LoadLogo(fileUri.getPath());
+                            woyouService.printBitmap(bitmap, callback);
+                        }
                         // woyouService.printerSelfChecking(callback);//这里使用的AIDL方式打印
                         woyouService.setAlignment(1,callback);
                         woyouService.printTextWithFont("-------" + "RECS" + "-------\n", "BOLD", 30, callback);
