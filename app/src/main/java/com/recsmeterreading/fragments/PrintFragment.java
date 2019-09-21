@@ -860,9 +860,12 @@ public class PrintFragment extends Fragment implements View.OnClickListener {
                     try {
                     if(title.equals("TotalAmount") || title.equals("TotalUnits")) {
                             woyouService.printTextWithFont("-------" + "RECS" + "-------;\n\n", "", 36, callback);
-                            woyouService.printTextWithFont("Report;\n", "", 36, callback);
+                            woyouService.printTextWithFont("Report \n", "", 36, callback);
                             woyouService.printTextWithFont(   "Category          : "+category+";\n", "", 36, callback);
                             woyouService.printTextWithFont(      "                 Thank you                "+";\n", "", 36, callback);
+                        woyouService.printTextWithFont(" *****************************************"+ "\n", "", 16, callback);
+                        woyouService.printTextWithFont(" Toll Free No: 1800 425 1539"+ "\n", "", 16, callback);
+                        woyouService.printTextWithFont(" Support: recsrevenue@gmail.com"+ "\n", "", 16, callback);
 
 
 
@@ -872,8 +875,8 @@ public class PrintFragment extends Fragment implements View.OnClickListener {
                         }else
                             Toast.makeText(getActivity(), "null data", Toast.LENGTH_SHORT).show();
                         if(serviceNoList != null){
-                            woyouService.printTextWithFont("-------" + "RECS" + "-------\n", "", 36, callback);
-                            woyouService.printTextWithFont("Report;\n", "", 36, callback);
+                            woyouService.printTextWithFont("-------" + "RECS" + "-------\n", "", 16, callback);
+                            woyouService.printTextWithFont("Report \n", "", 16, callback);
                             for(ServiceNo serviceNo: serviceNoList ){
                                 woyouService.printTextWithFont(      "Service No          : "+serviceNo.getSCNO()+"\n", "", 16, callback);
 
@@ -900,13 +903,13 @@ public class PrintFragment extends Fragment implements View.OnClickListener {
                     if(serviceNumberList != null){
                         if(woyouService!=null)
                         try {
-                            woyouService.printTextWithFont("-------" + "RECS" + "-------;\n", "", 36, callback);
-                            woyouService.printTextWithFont("Unbilled Report;\n", "", 36, callback);
+                            woyouService.printTextWithFont("-------" + "RECS" + "-------;\n", "", 16, callback);
+                            woyouService.printTextWithFont("Unbilled Report;\n", "", 16, callback);
                             for(ServiceNumber serviceNo: serviceNumberList ){
-                                woyouService.printTextWithFont("Category: "+serviceNo.getCategory()+" & No Of Services: "+ serviceNo.getValue()+";\n", "", 36, callback);
+                                woyouService.printTextWithFont("Category: "+serviceNo.getCategory()+" & No Of Services: "+ serviceNo.getValue()+";\n", "", 16, callback);
 
                             }
-                            woyouService.printTextWithFont("                 Thank you                "+";\n", "", 36, callback);
+                            woyouService.printTextWithFont("                 Thank you                "+";\n", "", 16, callback);
 
                             woyouService.printTextWithFont(" *****************************************"+ "\n", "", 16, callback);
                             woyouService.printTextWithFont(" Toll Free No: 1800 425 1539"+ "\n", "", 16, callback);
