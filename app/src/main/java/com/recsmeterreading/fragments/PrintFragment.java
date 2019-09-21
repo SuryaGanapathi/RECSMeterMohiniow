@@ -778,6 +778,79 @@ public class PrintFragment extends Fragment implements View.OnClickListener {
                         }else {
                             woyouService.printTextWithFont("Phone Number        : "+"NA" + "\n", "", 16, callback);
                             }
+                        woyouService.printTextWithFont("Bill Date           : "+getBillDetailsModel.getBILLDATE() + "\n", "", 16, callback);
+                        woyouService.printTextWithFont("Status Code         : "+getBillDetailsModel.getSTATUS().substring(0,2)+ "\n", "", 16, callback);
+                        woyouService.printTextWithFont("Category            : "+getBillDetailsModel.getCategory() + "\n", "", 16, callback);
+                        if(getBillDetailsModel.getSubcategory().length()<2){
+                            getBillDetailsModel.setSubcategory("0"+getBillDetailsModel.getSubcategory());
+
+                        }
+                        woyouService.printTextWithFont("Sub Category        : "+getBillDetailsModel.getSubcategory() + "\n", "", 16, callback);
+
+                        int category = Integer.parseInt(getBillDetailsModel.getCategory() + "0" + getBillDetailsModel.getSubcategory());
+                        //kw
+                        if(getBillDetailsModel.getCategory().equals("1")
+                                || getBillDetailsModel.getCategory().equals("2")
+                                || category == 601
+                                || category == 602
+                                || getBillDetailsModel.getCategory().equals("7")
+                                || getBillDetailsModel.getCategory().equals("8")){
+                            woyouService.printTextWithFont("Load                : "+getBillDetailsModel.getCSM_CONNECTED_LOAD()+" kw" + "\n", "", 16, callback);
+
+                        }else {
+                            woyouService.printTextWithFont("Load                : "+getBillDetailsModel.getCSM_CONNECTED_LOAD()+" hp" + "\n", "", 16, callback);
+                        }
+                        woyouService.printTextWithFont("Phase               : "+getBillDetailsModel.getPHASE() + "\n", "", 16, callback);
+
+                        if(getBillDetailsModel.getSTATUS().substring(0,2).equals("11")){
+                            woyouService.printTextWithFont("Meter Charges       : "+getBillDetailsModel.getBurntValue() + "\n", "", 16, callback);
+                            }
+                        woyouService.printTextWithFont("Start Reading Date : "+getBillDetailsModel.getOpmonth() + "\n", "", 16, callback);
+                        woyouService.printTextWithFont("Start Reading Units : "+getBillDetailsModel.getOPRDNG() + "\n", "", 16, callback);
+                        woyouService.printTextWithFont("End Reading Units : "+getBillDetailsModel.getCLRDNG() + "\n", "", 16, callback);
+                        woyouService.printTextWithFont("End Reading Date : "+getBillDetailsModel.getBILLDATE() + "\n", "", 16, callback);
+                        woyouService.printTextWithFont("Units               : "+getBillDetailsModel.getUNITS() + "\n", "", 16, callback);
+                        woyouService.printTextWithFont("Energy Charges      : Rs."+getBillDetailsModel.getENGCHG() + "\n", "", 16, callback);
+                        woyouService.printTextWithFont("Customer Charges    : Rs."+getBillDetailsModel.getCUSCHG()+ "\n", "", 16, callback);
+                        woyouService.printTextWithFont("Surcharges          : Rs."+getBillDetailsModel.getSURCHRGS()+ "\n", "", 16, callback);
+                        woyouService.printTextWithFont("Fixed Meter Charges : Rs."+getBillDetailsModel.getFIXEDCHG()+ "\n", "", 16, callback);
+                        woyouService.printTextWithFont("Electrical Duty     : Rs."+getBillDetailsModel.getEDCHG()+ "\n", "", 16, callback);
+                        String[] abc = getBillDetailsModel.getNkt().split(" ");
+
+                        woyouService.printTextWithFont("NKT                 : Rs."+abc[0]+ "\n", "", 16, callback);
+
+                        if(abc.length>2){
+                            woyouService.printTextWithFont("6AM to 10AM         :  "+abc[1]+ "\n", "", 16, callback);
+                            woyouService.printTextWithFont("6AM to 10AM         :  "+abc[2]+ "\n", "", 16, callback);
+                            woyouService.printTextWithFont("10PM to 6AM          :  "+abc[3]+ "\n", "", 16, callback);
+
+                        }
+                        double totalAmount = 0;
+                        if(getBillDetailsModel.getCSM_CASTE().equals("SC") || getBillDetailsModel.getCSM_CASTE().equals("ST")){
+
+                            totalAmount= Double.parseDouble(getBillDetailsModel.getBILLAMT())- Double.parseDouble(getBillDetailsModel.getClose_bal())+ Double.parseDouble(getBillDetailsModel.getAdj_amount());
+
+
+                        }else {
+                            totalAmount = Double.parseDouble(getBillDetailsModel.getBILLAMT())- Double.parseDouble(getBillDetailsModel.getClose_bal());
+                        }
+                        woyouService.printTextWithFont("Total Bill Amount   : Rs."+ totalAmount+ "\n", "", 16, callback);
+
+                        if(getBillDetailsModel.getCSM_CASTE().equals("SC") || getBillDetailsModel.getCSM_CASTE().equals("ST"))
+                            woyouService.printTextWithFont("Adjustment Amount   : Rs."+getBillDetailsModel.getAdj_amount()+ "\n", "", 16, callback);
+                        woyouService.printTextWithFont("Arrears             : Rs."+getBillDetailsModel.getClose_bal()+ "\n", "", 16, callback);
+                        woyouService.printTextWithFont("Grand Total Amount  : Rs."+getBillDetailsModel.getBILLAMT()+ "\n", "", 16, callback);
+                        woyouService.printTextWithFont("Due Date            : "+getBillDetailsModel.getDUEDATE()+ "\n", "", 16, callback);
+                        woyouService.printTextWithFont("Disconnection Date  : "+getBillDetailsModel.getDISCDATE()+ "\n", "", 16, callback);
+                        woyouService.printTextWithFont("Last Paid Date      : "+getBillDetailsModel.getLPDATE()+ "\n", "", 16, callback);
+                        woyouService.printTextWithFont("Last paid amount    : "+getBillDetailsModel.getLPAMT()+ "\n\n", "", 16, callback);
+                        woyouService.printTextWithFont("Share Capital       : "+getBillDetailsModel.getCSM_SHARE()+ "\n", "", 16, callback);
+                        woyouService.printTextWithFont("                             Signature"+ "\n", "", 16, callback);
+                        woyouService.printTextWithFont("                 Thank you                "+ "\n", "", 16, callback);
+                        woyouService.printTextWithFont(" *****************************************"+ "\n", "", 16, callback);
+                        woyouService.printTextWithFont(" Toll Free No: 1800 425 1539"+ "\n", "", 16, callback);
+                        woyouService.printTextWithFont(" Support: recsrevenue@gmail.com"+ "\n", "", 16, callback);
+
 
                     } catch (RemoteException e) {
                         e.printStackTrace();
@@ -807,8 +880,10 @@ public class PrintFragment extends Fragment implements View.OnClickListener {
                             }
                             woyouService.printTextWithFont(      "                 Thank you                "+"\n", "", 16, callback);
 
-                            woyouService.printTextWithFont(       " Toll Free No: 1800 425 1539"+"\n", "", 16, callback);
-                            woyouService.printTextWithFont(        " Support: recsrevenue@gmail.com"+"\n", "", 16, callback);
+                            woyouService.printTextWithFont(" *****************************************"+ "\n", "", 16, callback);
+                            woyouService.printTextWithFont(" Toll Free No: 1800 425 1539"+ "\n", "", 16, callback);
+                            woyouService.printTextWithFont(" Support: recsrevenue@gmail.com"+ "\n", "", 16, callback);
+
 
                         }
                     }
@@ -831,10 +906,11 @@ public class PrintFragment extends Fragment implements View.OnClickListener {
                                 woyouService.printTextWithFont("Category: "+serviceNo.getCategory()+" & No Of Services: "+ serviceNo.getValue()+";\n", "", 36, callback);
 
                             }
-                            woyouService.printTextWithFont(      "                 Thank you                "+";\n", "", 36, callback);
+                            woyouService.printTextWithFont("                 Thank you                "+";\n", "", 36, callback);
 
-                            woyouService.printTextWithFont(       " Toll Free No: 1800 425 1539"+";\n", "", 36, callback);
-                            woyouService.printTextWithFont(        " Support: recsrevenue@gmail.com"+";\n", "", 36, callback);
+                            woyouService.printTextWithFont(" *****************************************"+ "\n", "", 16, callback);
+                            woyouService.printTextWithFont(" Toll Free No: 1800 425 1539"+ "\n", "", 16, callback);
+                            woyouService.printTextWithFont(" Support: recsrevenue@gmail.com"+ "\n", "", 16, callback);
 
 
                         } catch (RemoteException e) {
