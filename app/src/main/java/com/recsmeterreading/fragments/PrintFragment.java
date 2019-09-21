@@ -2,6 +2,9 @@ package com.recsmeterreading.fragments;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.support.v4.app.Fragment;
@@ -18,6 +21,7 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 import com.ngx.BluetoothPrinter;
 import com.ngx.BtpCommands;
+import com.ngx.NgxImageFactory;
 import com.recsmeterreading.R;
 import com.recsmeterreading.Utils.DialogAction;
 import com.recsmeterreading.api.ApiUtils;
@@ -73,6 +77,7 @@ public class PrintFragment extends Fragment implements View.OnClickListener {
     ServiceDetails serviceDetails;
     String title,value,category = null;
     int fontSize=20;
+    Uri fileUri=SetLogo.fileUri;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -759,10 +764,16 @@ public class PrintFragment extends Fragment implements View.OnClickListener {
                 if(report == 0) {
                     if(woyouService!=null)
                     try {
+                        // bitmap factory
+                        BitmapFactory.Options options = new BitmapFactory.Options();
+                        final Bitmap bitmap = BitmapFactory.decodeFile(fileUri.getPath(),
+                                options);
+                       // Bitmap b = NgxImageFactory.LoadLogo(fileUri.getPath());
+                        woyouService.printBitmap(bitmap,callback);
                         // woyouService.printerSelfChecking(callback);//这里使用的AIDL方式打印
                         woyouService.setAlignment(1,callback);
                         woyouService.printTextWithFont("-------" + "RECS" + "-------\n", "BOLD", 30, callback);
-                        woyouService.printTextWithFont("Bill Receipt\n", "", fontSize, callback);
+                        woyouService.printTextWithFont("Bill Receipt\n", "BOLD", fontSize, callback);
                         woyouService.setAlignment(0,callback);
 
                         woyouService.printTextWithFont("Bill No             : " + getBillDetailsModel.getSTATUS().substring(2) + "\n", "", fontSize, callback);

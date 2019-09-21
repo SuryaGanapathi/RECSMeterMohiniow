@@ -20,6 +20,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.database.Cursor;
@@ -86,6 +87,7 @@ public class SetLogo extends Fragment {
 
 				boolean r  = BluetoothPrinterMain.mBtp.setLogo(fileUri.getPath(), bIgnoreAlpha, bInvertBitmap, threshold);
 				if (r) {
+
 					Toast.makeText(getActivity(), "Set Logo OK",
 							Toast.LENGTH_SHORT).show();
 				} else {
@@ -104,7 +106,7 @@ public class SetLogo extends Fragment {
 
 	private ImageView imgPreviewAsIs, imgLogoPreview;
 
-	private Uri fileUri;
+	public static Uri fileUri;
 	// file url to store captured image
 
 	private static final int CAMERA_CAPTURE_IMAGE_REQUEST_CODE = 100;
@@ -261,6 +263,8 @@ public class SetLogo extends Fragment {
 		// start the image capture Intent
 		startActivityForResult(intent, CAMERA_CAPTURE_IMAGE_REQUEST_CODE);
 	}
+
+
 
 	/**
 	 * Creating file uri to store image/video
