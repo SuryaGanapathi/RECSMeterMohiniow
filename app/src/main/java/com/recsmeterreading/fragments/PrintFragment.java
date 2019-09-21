@@ -763,6 +763,8 @@ public class PrintFragment extends Fragment implements View.OnClickListener {
                         woyouService.setAlignment(1,callback);
                         woyouService.printTextWithFont("-------" + "RECS" + "-------\n", "BOLD", 30, callback);
                         woyouService.printTextWithFont("Bill Receipt\n", "", fontSize, callback);
+                        woyouService.setAlignment(0,callback);
+
                         woyouService.printTextWithFont("Bill No             : " + getBillDetailsModel.getSTATUS().substring(2) + "\n", "", fontSize, callback);
                         woyouService.printTextWithFont("Service No          : " + getBillDetailsModel.getSCNO() + "\n", "", fontSize, callback);
                         woyouService.printTextWithFont("Meter No            : " + getBillDetailsModel.getCSM_METER_NO() + "\n", "", fontSize, callback);
