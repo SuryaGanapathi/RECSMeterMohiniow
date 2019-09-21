@@ -760,6 +760,7 @@ public class PrintFragment extends Fragment implements View.OnClickListener {
                     if(woyouService!=null)
                     try {
                         // woyouService.printerSelfChecking(callback);//这里使用的AIDL方式打印
+                        woyouService.setAlignment(1,callback);
                         woyouService.printTextWithFont("-------" + "RECS" + "-------\n", "BOLD", 30, callback);
                         woyouService.printTextWithFont("Bill Receipt\n", "", fontSize, callback);
                         woyouService.printTextWithFont("Bill No             : " + getBillDetailsModel.getSTATUS().substring(2) + "\n", "", fontSize, callback);
@@ -805,10 +806,10 @@ public class PrintFragment extends Fragment implements View.OnClickListener {
                         if(getBillDetailsModel.getSTATUS().substring(0,2).equals("11")){
                             woyouService.printTextWithFont("Meter Charges       : "+getBillDetailsModel.getBurntValue() + "\n", "", fontSize, callback);
                             }
-                        woyouService.printTextWithFont("Start Reading Date : "+getBillDetailsModel.getOpmonth() + "\n", "", fontSize, callback);
+                        woyouService.printTextWithFont("Start Reading Date  : "+getBillDetailsModel.getOpmonth() + "\n", "", fontSize, callback);
                         woyouService.printTextWithFont("Start Reading Units : "+getBillDetailsModel.getOPRDNG() + "\n", "", fontSize, callback);
-                        woyouService.printTextWithFont("End Reading Units : "+getBillDetailsModel.getCLRDNG() + "\n", "", fontSize, callback);
-                        woyouService.printTextWithFont("End Reading Date : "+getBillDetailsModel.getBILLDATE() + "\n", "", fontSize, callback);
+                        woyouService.printTextWithFont("End Reading Units   : "+getBillDetailsModel.getCLRDNG() + "\n", "", fontSize, callback);
+                        woyouService.printTextWithFont("End Reading Date    : "+getBillDetailsModel.getBILLDATE() + "\n", "", fontSize, callback);
                         woyouService.printTextWithFont("Units               : "+getBillDetailsModel.getUNITS() + "\n", "", fontSize, callback);
                         woyouService.printTextWithFont("Energy Charges      : Rs."+getBillDetailsModel.getENGCHG() + "\n", "", fontSize, callback);
                         woyouService.printTextWithFont("Customer Charges    : Rs."+getBillDetailsModel.getCUSCHG()+ "\n", "", fontSize, callback);
@@ -838,6 +839,7 @@ public class PrintFragment extends Fragment implements View.OnClickListener {
 
                         if(getBillDetailsModel.getCSM_CASTE().equals("SC") || getBillDetailsModel.getCSM_CASTE().equals("ST"))
                             woyouService.printTextWithFont("Adjustment Amount   : Rs."+getBillDetailsModel.getAdj_amount()+ "\n", "", fontSize, callback);
+
                         woyouService.printTextWithFont("Arrears             : Rs."+getBillDetailsModel.getClose_bal()+ "\n", "", fontSize, callback);
                         woyouService.printTextWithFont("Grand Total Amount  : Rs."+getBillDetailsModel.getBILLAMT()+ "\n", "", fontSize, callback);
                         woyouService.printTextWithFont("Due Date            : "+getBillDetailsModel.getDUEDATE()+ "\n", "", fontSize, callback);
