@@ -24,6 +24,7 @@ import com.ngx.BtpCommands;
 import com.ngx.NgxImageFactory;
 import com.recsmeterreading.R;
 import com.recsmeterreading.Utils.DialogAction;
+import com.recsmeterreading.Utils.SharedPreferenceUtil;
 import com.recsmeterreading.api.ApiUtils;
 import com.recsmeterreading.api.MeterApi;
 import com.recsmeterreading.bluetoothPrinter.BluetoothPrinterMain;
@@ -33,6 +34,7 @@ import com.recsmeterreading.model.ServiceDetails;
 import com.recsmeterreading.model.ServiceNo;
 import com.recsmeterreading.model.ServiceNumber;
 
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -77,7 +79,7 @@ public class PrintFragment extends Fragment implements View.OnClickListener {
     ServiceDetails serviceDetails;
     String title,value,category = null;
     int fontSize=20;
-    Uri fileUri=SetLogo.fileUri;
+    Uri fileUri=null;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -90,6 +92,10 @@ public class PrintFragment extends Fragment implements View.OnClickListener {
 
         r_bundle = getActivity().getIntent().getExtras();
         dialogAction = new DialogAction(getActivity());
+
+        String uri=SharedPreferenceUtil.getFromPreference(getContext(),"LogoUri","");
+        if(uri!="")
+        fileUri=Uri.parse(uri);
         report = r_bundle.getInt("report",0);
         if(report == 5){
 
@@ -776,7 +782,7 @@ public class PrintFragment extends Fragment implements View.OnClickListener {
                         }
                         // woyouService.printerSelfChecking(callback);//这里使用的AIDL方式打印
                         woyouService.setAlignment(1,callback);
-                        woyouService.printTextWithFont("-------" + "RECS" + "-------\n", "BOLD", 30, callback);
+                        woyouService.printTextWithFont("\n-------" + "RECS" + "-------\n", "BOLD", 30, callback);
                         woyouService.printTextWithFont("Bill Receipt\n", "BOLD", fontSize, callback);
                         woyouService.setAlignment(0,callback);
 
@@ -878,7 +884,7 @@ public class PrintFragment extends Fragment implements View.OnClickListener {
                     if(woyouService!=null)
                     try {
                     if(title.equals("TotalAmount") || title.equals("TotalUnits")) {
-                            woyouService.printTextWithFont("-------" + "RECS" + "-------\n\n", "", fontSize, callback);
+                            woyouService.printTextWithFont("\n-------" + "RECS" + "-------\n\n", "", fontSize, callback);
                             woyouService.printTextWithFont("Report \n", "", fontSize, callback);
                             woyouService.printTextWithFont(   "Category          : "+category+"\n", "", fontSize, callback);
                             woyouService.printTextWithFont(      "                 Thank you                "+";\n", "", fontSize, callback);
@@ -922,7 +928,7 @@ public class PrintFragment extends Fragment implements View.OnClickListener {
                     if(serviceNumberList != null){
                         if(woyouService!=null)
                         try {
-                            woyouService.printTextWithFont("-------" + "RECS" + "-------;\n", "", 30, callback);
+                            woyouService.printTextWithFont("\n-------" + "RECS" + "-------;\n", "", 30, callback);
                             woyouService.printTextWithFont("Unbilled Report;\n", "", fontSize, callback);
                             for(ServiceNumber serviceNo: serviceNumberList ){
                                 woyouService.printTextWithFont("Category: "+serviceNo.getCategory()+" & No Of Services: "+ serviceNo.getValue()+";\n", "", fontSize, callback);
